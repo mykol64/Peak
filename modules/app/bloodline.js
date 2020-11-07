@@ -134,7 +134,7 @@ export default class bloodline {
         if(smallReverseBloodsugars[index].sgv === 'LOS') {
           graphPoints[index].style.opacity = 0;
         } else {
-          graphPoints[index].style.opacity = 1;
+          graphPoints[index].style.opacity = .045*index+.04;
           let pointY = (height - (height * (Math.round(((bg.sgv - ymin) / (ymax - ymin)) * 100) / 100)));
           //  - TODO: compare time of current sgv to time of last sgv and make sure its equal 5m if not add spacing
           graphPoints[index].cy = pointY;
