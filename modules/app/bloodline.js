@@ -151,7 +151,7 @@ export default class bloodline {
                graphPoints[index].style.fill = "#de4430"; // red 
             }
           } else {
-            graphPoints[index].style.fill = "#75bd78"; // green 
+            graphPoints[index].style.fill = "#1AD36B"; // green 
           } 
         }
       } catch(e) {

@@ -6,3 +6,5 @@ node_modules
 build
 /build
 
+# macOS file
+*.DS_Store

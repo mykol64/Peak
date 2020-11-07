@@ -2,19 +2,20 @@
   
     <svg id="main">
         <gradientRect id="bgColor" width="100%" height="100%" gradient-type="linear" gradient-x1="0" gradient-y1="20" gradient-x2="0" gradient-y2="100%-80" gradient-color1="#390263" gradient-color2="black" />
-        <rect id="battery-level" />
-        <image class="battery-image" href="img/battery.png" fill="white" />
-        <text text-anchor="start" class="text text-gray" id="batteryPercent">99</text>
+        <!-- <rect id="battery-level" /> -->
+        <!-- <image class="battery-image" href="img/battery.png" fill="white" /> -->
+        <!-- <image id="battery-alert" x="50" y="50" href="img/battery-alert.svg" opacity="100" /> -->
+        <!-- <text text-anchor="start" class="text text-gray" id="batteryPercent">99</text> -->
         <text text-anchor="start" class="text text-gray" id="weather">--</text>
         <image href="img/degree.png" id="degreeIcon" />
-        <text text-anchor="start" class="text text-gray" id="date" />
-        <text text-anchor="end" class="text text-gray" id="delta" />
+        <!-- <text text-anchor="start" class="text text-gray" id="date" /> -->
+        <text class="text text-gray" id="delta" />
         <line stroke-width="4" id="errorLine" display="none" />
         <text text-anchor="end" class="text text-gray" id="timeOfLastSgv" />
 
         <image href="img/arrows/None.png" id="arrows" />
         <!-- <text font-size="84" text-anchor="middle" alignment-baseline="middle" class="h1" id="time" pointer-events="visible" /> -->
-        <text font-size="75" text-anchor="end" class="h2" id="sgv" pointer-events="all" />
+        <text font-size="45" text-anchor="end" class="h2" id="sgv" pointer-events="all" />
         <image class="stat-image" href="img/step.png" fill="white" id="stepIcon" />
         <text text-anchor="start" class="text" id="steps" />
         <image class="stat-image" href="img/heart.png" fill="white" id="heartIcon" />
@@ -95,6 +96,7 @@
         <!-- End Graph -->
 
         <text font-size="84" text-anchor="middle" alignment-baseline="middle" class="h1" id="time" pointer-events="visible" />
+        <text text-anchor="middle" class="text text-gray" id="date" />
 
     </svg>
   

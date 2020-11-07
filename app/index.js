@@ -16,7 +16,8 @@ import { inbox } from "file-transfer";
 import fs from "fs";
 import { vibration } from "haptics";
 import DateTime from "../modules/app/dateTime.js";
-import BatteryLevels from "../modules/app/batteryLevels.js";
+// import BatteryLevels from "../modules/app/batteryLevels.js";
+// import BatteryWarning from "../modules/app/batteryWarning.js";
 import Graph from "../modules/app/bloodline.js";
 import UserActivity from "../modules/app/userActivity.js";
 import Alerts from "../modules/app/alerts.js";
@@ -26,7 +27,8 @@ import Transfer from "../modules/app/transfer.js";
 import { memory } from "system";
 
 const dateTime = new DateTime();
-const batteryLevels = new BatteryLevels();
+// const batteryLevels = new BatteryLevels();
+// const batteryWarning = new BatteryWarning();
 const graph = new Graph();
 const userActivity = new UserActivity();
 const alerts = new Alerts();
@@ -56,14 +58,15 @@ let weather = document.getElementById("weather");
 let arrows = document.getElementById("arrows");
 let largeGraphArrows = document.getElementById("largeGraphArrows");
 let alertArrows = document.getElementById("alertArrows");
-let batteryLevel = document.getElementById("battery-level");
+// let batteryLevel = document.getElementById("battery-level");
 let steps = document.getElementById("steps");
 let stepIcon = document.getElementById("stepIcon");
 let heart = document.getElementById("heart");
 let heartIcon = document.getElementById("heartIcon");
 let bgColor = document.getElementById("bgColor");
 let largeGraphBgColor = document.getElementById("largeGraphBgColor");
-let batteryPercent = document.getElementById("batteryPercent");
+// let batteryPercent = document.getElementById("batteryPercent");
+// let batteryAlert = document.getElementById("battery-alert");
 let popup = document.getElementById("popup");
 let dismiss = popup.getElementById("dismiss");
 let errorText = document.getElementById("error");
@@ -128,7 +131,8 @@ timeOfLastSgv.text = "";
 weather.text = "--";
 steps.text = "--";
 heart.text = "--";
-batteryPercent.text = "%";
+// batteryPercent.text = "%";
+// batteryAlert.style.opacity = 100;
 bgColor.gradient.colors.c1 = "#390263";
 largeGraphBgColor.gradient.colors.c1 = "#390263";
 errorText.text = "";
@@ -137,7 +141,7 @@ setInterval(update, 10000);
 
 timeElement.text = dateTime.getTime();
 largeGraphTime.text = dateTime.getTime();
-batteryLevel.width = batteryLevels.get().level;
+// batteryLevel.width = batteryLevels.get().level;
 
 inbox.onnewfile = () => {
   console.log("New file!");
@@ -167,9 +171,10 @@ function update() {
 
   if (data) {
     console.warn("GOT DATA");
-    batteryLevel.width = batteryLevels.get().level;
-    batteryLevel.style.fill = batteryLevels.get().color;
-    batteryPercent.text = "" + batteryLevels.get().percent + "%";
+    // batteryLevel.width = batteryLevels.get().level;
+    // batteryLevel.style.fill = batteryLevels.get().color;
+    // batteryPercent.text = "" + batteryLevels.get().percent + "%";
+    // batteryAlert.style.opacity = batteryWarning.get().opacity;
     timeElement.text = dateTime.getTime(data.settings.timeFormat);
     largeGraphTime.text = dateTime.getTime(data.settings.timeFormat);
 
@@ -185,7 +190,7 @@ function update() {
     largeGraphBgColor.gradient.colors.c1 = data.settings.bgColor;
     largeGraphBgColor.gradient.colors.c2 = data.settings.bgColorTwo;
 
-    setTextColor(data.settings.textColor);
+    // setTextColor(data.settings.textColor);
     // bloodsugars
     let currentBgFromBloodSugars = getFistBgNonpredictiveBG(
       data.bloodSugars.bgs
@@ -364,8 +369,8 @@ function update() {
     console.warn("NO DATA");
     steps.text = commas(userActivity.get().steps);
     heart.text = userActivity.get().heartRate;
-    batteryLevel.width = batteryLevels.get().level;
-    batteryPercent.text = "" + batteryLevels.get().percent + "%";
+    // batteryLevel.width = batteryLevels.get().level;
+    // batteryPercent.text = "" + batteryLevels.get().percent + "%";
 
     timeElement.text = dateTime.getTime();
     largeGraphTime.text = dateTime.getTime();
@@ -396,7 +401,7 @@ function setTextColor(color) {
     "cob",
     "heart",
     "steps",
-    "batteryPercent",
+    // "batteryPercent",
     "date",
     "delta",
     "timeOfLastSgv",

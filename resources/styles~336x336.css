@@ -1,6 +1,6 @@
 .text {
   font-size: 23;
-  font-family:  Colfax-Medium;
+  font-family:  System-regular;
   font-weight: regular;
   width: 100%;
   height: 100%;
@@ -42,11 +42,10 @@
   height: 100%;
   fill: white;
   text-length: 64;
-  text-align: center;
 }
 
 .text-gray{
-  fill: #B8C3C4;
+  fill: #6f6f6f;
 }
 
 #battery-level {
@@ -68,9 +67,14 @@
   y: 11%;
 }
 
+#battery-alert {
+  width: 10;
+  height: 20;
+}
+
 #date {
-  x: 6%;
-  y: 18%;
+  x: 50%;
+  y: 50%+54;
 }
 
 #error {
@@ -90,14 +94,14 @@
 }
 
 #delta {
-  x: 85%;
-  y: 11%;
+  x: 140;
+  y: 64;
 }
 
 #sgv {
   text-anchor:"end";
-  x: 95%;
-  y: 28%;
+  x: 128;
+  y: 64;
 }
 
 #timeOfLastSgv{
@@ -108,7 +112,6 @@
 #time {
   x: 50%;
   y: 50%+24;
-  z-index: 1;
 }
 
 #arrows {
