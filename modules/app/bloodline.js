@@ -52,7 +52,7 @@ export default class bloodline {
     
     let ymin = low;
     let ymax = high;
-    let height = 100;
+    let height = 184;
     // map all sgv to an array then filter out LOS values
     let sgvArray = reverseBloodsugars.map(bg => bg.sgv).filter(bg => bg !== 'LOS');  
     const currentHighestBg = Math.max(...sgvArray);
