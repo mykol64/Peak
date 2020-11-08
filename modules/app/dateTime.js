@@ -16,24 +16,31 @@ export default class dateTime {
     console.log("app - dateTime - getDate()");
     let dateObj = new Date();
     let month = ("0" + (dateObj.getMonth() + 1)).slice(-2);
-    let date = ("0" + dateObj.getDate()).slice(-2);
+    let longDate = ("0" + dateObj.getDate()).slice(-2);
+    let date = dateObj.getDate();
     let year = dateObj.getFullYear();
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+    let fullMonth = monthNames[dateObj.getMonth()];
 
     if (enableDOW) {
       year = year.toString().substr(-2);
     }
 
-    let shortDate = month + "/" + date + "/" + year;
+    let shortDate = month + "/" + longDate + "/" + year;
 
     if (dateFormat) {
       if (dateFormat == "DD/MM/YYYY") {
-        shortDate = date + "/" + month + "/" + year;
+        shortDate = longDate + "/" + month + "/" + year;
       } else if (dateFormat == "YYYY/MM/DD") {
-        shortDate = year + "/" + month + "/" + date;
+        shortDate = year + "/" + month + "/" + longDate;
       } else if (dateFormat == "DD.MM.YYYY") {
-        shortDate = date + "." + month + "." + year;
+        shortDate = longDate + "." + month + "." + year;
+      } else if (dateFormat == "Month Day, Year") {
+        shortDate = fullMonth + " " + date + ", " + year;
       }
+
     }
 
     if (enableDOW) {

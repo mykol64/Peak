@@ -214,6 +214,7 @@ function mySettings(props) {
             { name: "DD/MM/YYYY", value: "DD/MM/YYYY" },
             { name: "YYYY/MM/DD", value: "YYYY/MM/DD" },
             { name: "DD.MM.YYYY", value: "DD.MM.YYYY" },
+            { name: "Month Day, Year", value: "Month Day, Year" },
           ]}
         />
         <Toggle settingsKey="enableDOW" label="Day of week at end of date" />

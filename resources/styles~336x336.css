@@ -1,6 +1,6 @@
 .text {
-  font-size: 23;
-  font-family:  System-regular;
+  font-size: 21;
+  font-family:  System-Regular;
   font-weight: regular;
   width: 100%;
   height: 100%;
@@ -74,7 +74,7 @@
 
 #date {
   x: 50%;
-  y: 50%+54;
+  y: 50%+48;
 }
 
 #error {
