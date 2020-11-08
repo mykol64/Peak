@@ -39,6 +39,8 @@ export default class dateTime {
         shortDate = longDate + "." + month + "." + year;
       } else if (dateFormat == "Month Day, Year") {
         shortDate = fullMonth + " " + date + ", " + year;
+      } else if (dateFormat == "Month Day") {
+        shortDate = fullMonth + " " + date;
       }
 
     }
@@ -83,7 +85,7 @@ export default class dateTime {
       timeSense = "~" + Math.floor(secondsDiff / 3600) + "h";
       timeSenseNumber = Math.floor(secondsDiff / 60);
     } else if (secondsDiff > 0) {
-      timeSense = Math.floor(secondsDiff / 60) + " min";
+      timeSense = Math.floor(secondsDiff / 60) + " min ago";
       timeSenseNumber = Math.floor(secondsDiff / 60);
     }
     return [timeSense, timeSenseNumber];

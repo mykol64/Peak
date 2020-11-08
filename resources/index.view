@@ -10,8 +10,9 @@
         <image href="img/degree.png" id="degreeIcon" />
         <!-- <text text-anchor="start" class="text text-gray" id="date" /> -->
         <text class="text text-gray" id="delta" />
+        <text class="text text-gray" id="delta-updated" />
         <line stroke-width="4" id="errorLine" display="none" />
-        <text text-anchor="end" class="text text-gray" id="timeOfLastSgv" />
+        <!-- <text text-anchor="end" class="text text-gray" id="timeOfLastSgv" /> -->
 
         <image href="img/arrows/None.png" id="arrows" />
         <!-- <text font-size="84" text-anchor="middle" alignment-baseline="middle" class="h1" id="time" pointer-events="visible" /> -->
@@ -66,7 +67,7 @@
                 <set href="#text" attributeName="text-buffer" to="" />
             </use>
             <text id="high" class="xs-text" text-anchor="end" />
-            <text id="low" class="xs-text" text-anchor="end" />
+            <text id="low" class="xs-text" />
             <circle class="graphPoints" cx="4%" cy="50%" r="3" />
             <circle class="graphPoints" cx="8%" cy="50%" r="3" />
             <circle class="graphPoints" cx="12%" cy="50%" r="3" />

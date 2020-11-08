@@ -41,8 +41,9 @@ let rawbg = document.getElementById("rawbg");
 let tempBasal = document.getElementById("tempBasal");
 let largeGraphsSgv = document.getElementById("largeGraphsSgv");
 let delta = document.getElementById("delta");
+let deltaUpdated = document.getElementById("delta-updated");
 let largeGraphDelta = document.getElementById("largeGraphDelta");
-let timeOfLastSgv = document.getElementById("timeOfLastSgv");
+// let timeOfLastSgv = document.getElementById("timeOfLastSgv");
 let largeGraphTimeOfLastSgv = document.getElementById(
   "largeGraphTimeOfLastSgv"
 );
@@ -121,13 +122,14 @@ function disableAlertsFalse() {
 sgv.text = "---";
 rawbg.text = "";
 delta.text = "";
+deltaUpdated.text = "";
 largeGraphDelta.text = "";
 iob.text = "0.0";
 cob.text = "0.0";
 largeGraphIob.text = "0.0";
 largeGraphCob.text = "0.0";
 dateElement.text = "";
-timeOfLastSgv.text = "";
+// timeOfLastSgv.text = "";
 weather.text = "--";
 steps.text = "--";
 heart.text = "--";
@@ -291,9 +293,11 @@ function update() {
       predictedBg.text = "";
     }
 
-    timeOfLastSgv.text = dateTime.getTimeSenseLastSGV(
-      currentBgFromBloodSugars.datetime
-    )[0];
+    // timeOfLastSgv.text = dateTime.getTimeSenseLastSGV(
+    //   currentBgFromBloodSugars.datetime
+    // )[0];
+
+
     largeGraphTimeOfLastSgv.text = dateTime.getTimeSenseLastSGV(
       currentBgFromBloodSugars.datetime
     )[0];
@@ -342,6 +346,10 @@ function update() {
     delta.text = deltaText + " " + data.settings.glucoseUnits;
     largeGraphDelta.text = deltaText + " " + data.settings.glucoseUnits;
     largeGraphLoopStatus.text = ""; // currentBgFromBloodSugars.loopstatus;
+
+    deltaUpdated.text = deltaText + " " + data.settings.glucoseUnits + ", " + dateTime.getTimeSenseLastSGV(
+      currentBgFromBloodSugars.datetime
+    )[0];
 
     arrows.href =
       "../resources/img/arrows/" + currentBgFromBloodSugars.direction + ".png";
@@ -404,7 +412,8 @@ function setTextColor(color) {
     // "batteryPercent",
     "date",
     "delta",
-    "timeOfLastSgv",
+    "deltaUpdated",
+    // "timeOfLastSgv",
     "time",
     "high",
     "low",
