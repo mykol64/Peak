@@ -51,7 +51,7 @@
 #battery-level {
   width: 30; 
   height: 18; 
-  fill: #75bd78;
+  fill: #1AD36B;
   x: 15%;
   y: 5%+3; 
 }
@@ -121,10 +121,10 @@
 }
 
 #arrows {
-  x: 83%;
-  y: 35%;
-  width: 45;
-  height: 45;
+  x: 140;
+  y: 24;
+  width: 32;
+  height: 22;
   fill: white;
 }
 

@@ -27,31 +27,6 @@
         <text class="text" id="iob" />
         <image class="stat-image" href="img/syringe.png" fill="white" id="syringe" />      
         
-         <!-- Alert -->
-         <svg id="popup" display="none">
-            <!-- Black background -->
-            <rect class="full-size" fill="fb-black" />
-            <!-- Title and text -->
-            <!-- <use href="#mixed-text-center-mid" class="dialog-mixed-text" id="alertHeader">
-                <set href="#top-padding" attributeName="display" to="none" />
-                <set href="#header/text" attributeName="fill" to="fb-magenta" />
-                <set href="#copy/text" attributeName="text-buffer" to="Check blood sugar!" />
-                <set href="#header/text" attributeName="text-length" to="128" />
-                <set href="#bottom-padding" attributeName="display" to="none" />
-            </use> -->
-            <text font-size="75" display="none" text-anchor="middle" id="popup-title" class="h2 text-gray">--</text>
-            <image href="img/arrows/None.png" id="alertArrows"/>
-            <!-- Right button -->
-            <!-- <use id="dismiss" class="dialog-half-button-left" href="#square-button-negative">
-                <set href="#text" attributeName="text-buffer" to="Dismiss" />
-                <set href="#text" attributeName="text-anchor" to="middle" />
-            </use> -->
-            <use id="dismiss" href="#text-button">
-                <set href="#text" attributeName="text-buffer" to="Dismiss" />
-            </use>
-        </svg>
-        <!-- End Alert -->
-      
         <!-- Graph -->
         <svg id="graph">
             <image class="highLine" x="0" y="0" width="100%" height="1" href="img/line.png" />
@@ -98,6 +73,32 @@
 
         <text font-size="84" text-anchor="middle" alignment-baseline="middle" class="h1" id="time" pointer-events="visible" />
         <text text-anchor="middle" class="text text-gray" id="date" />
+
+        <!-- Alert -->
+        <svg id="popup" display="none">
+            <!-- Black background -->
+            <rect class="full-size" fill="fb-black" />
+            <!-- Title and text -->
+            <!-- <use href="#mixed-text-center-mid" class="dialog-mixed-text" id="alertHeader">
+                <set href="#top-padding" attributeName="display" to="none" />
+                <set href="#header/text" attributeName="fill" to="fb-magenta" />
+                <set href="#copy/text" attributeName="text-buffer" to="Check blood sugar!" />
+                <set href="#header/text" attributeName="text-length" to="128" />
+                <set href="#bottom-padding" attributeName="display" to="none" />
+            </use> -->
+            <text font-size="75" display="none" text-anchor="middle" id="popup-title" class="h2 text-gray">--</text>
+            <image href="img/arrows/None.png" id="alertArrows"/>
+            <!-- Right button -->
+            <!-- <use id="dismiss" class="dialog-half-button-left" href="#square-button-negative">
+                <set href="#text" attributeName="text-buffer" to="Dismiss" />
+                <set href="#text" attributeName="text-anchor" to="middle" />
+            </use> -->
+            <use id="dismiss" href="#text-button">
+                <set href="#text" attributeName="text-buffer" to="Dismiss" />
+            </use>
+        </svg>
+        <!-- End Alert -->
+
 
     </svg>
   
