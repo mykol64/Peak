@@ -107,8 +107,8 @@ export default class bloodline {
     lowLine[1].y1 = lowY;
     lowLine[1].y2 = lowY;
     
-    highNumber.y = highY;
-    lowNumber.y = lowY; 
+    highNumber.y = 16;
+    lowNumber.y = 180; 
     
     largeGraphHigh.y = highY;
     largeGraphLow.y = lowY; 

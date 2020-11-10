@@ -45,7 +45,7 @@
             <!-- <use id="goToLargeGraph" href="#text-button"  opacity="0">
                 <set href="#text" attributeName="text-buffer" to="" />
             </use> -->
-            <text id="high" class="xs-text" text-anchor="end" />
+            <text id="high" alignment-baseline="text-top" class="xs-text" text-anchor="end" />
             <text id="low" class="xs-text" />
             <circle class="graphPoints" cx="4%" cy="50%" r="3" />
             <circle class="graphPoints" cx="8%" cy="50%" r="3" />
