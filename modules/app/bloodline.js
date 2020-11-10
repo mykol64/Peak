@@ -183,7 +183,7 @@ export default class bloodline {
              largeGraphGraphPoints[index].style.fill = "#de4430"; // red 
           }
         } else {
-          largeGraphGraphPoints[index].style.fill = "#75bd78"; // green 
+          largeGraphGraphPoints[index].style.fill = "#1AD36B"; // green 
         }
       }
     }     

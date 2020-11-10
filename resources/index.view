@@ -1,7 +1,7 @@
 <svg id="glance">
   
     <svg id="main">
-        <gradientRect id="bgColor" width="100%" height="100%" gradient-type="linear" gradient-x1="0" gradient-y1="20" gradient-x2="0" gradient-y2="100%-80" gradient-color1="#390263" gradient-color2="black" />
+        <gradientRect id="bgColor" width="100%" height="100%" gradient-type="linear" gradient-x1="0" gradient-y1="20" gradient-x2="0" gradient-y2="100%-80" gradient-color1="black" gradient-color2="black" />
         <!-- <rect id="battery-level" /> -->
         <!-- <image class="battery-image" href="img/battery.png" fill="white" /> -->
         <!-- <image id="battery-alert" x="50" y="50" href="img/battery-alert.svg" opacity="100" /> -->
@@ -17,30 +17,34 @@
         <image href="img/arrows/None.png" id="arrows" />
         <!-- <text font-size="84" text-anchor="middle" alignment-baseline="middle" class="h1" id="time" pointer-events="visible" /> -->
         <text font-size="45" text-anchor="end" class="h2" id="sgv" pointer-events="all" />
-        <image class="stat-image" href="img/step.png" fill="white" id="stepIcon" />
-        <text text-anchor="start" class="text" id="steps" />
         <image class="stat-image" href="img/heart.png" fill="white" id="heartIcon" />
-        <text text-anchor="start" class="text" id="heart" />
+        <text class="text" id="heart" />
+        <image class="stat-image" href="img/step.png" fill="white" id="stepIcon" />
+        <text class="text" id="steps" />
         <text class="text" id="error" text-anchor="end">--</text>
         <text class="text" id="cob" />
         <image class="stat-image" href="img/hamburger.png" fill="white" id="hamburger" />
         <text class="text" id="iob" />
         <image class="stat-image" href="img/syringe.png" fill="white" id="syringe" />      
         
+        <use id="goToLargeGraph" href="#text-button"  opacity="0">
+            <set href="#text" attributeName="text-buffer" to="" />
+        </use>
+
         <!-- Graph -->
         <svg id="graph">
-            <image class="highLine" x="0" y="0" width="100%" height="1" href="img/line.png" />
-            <!-- <line class="highLine" x1="0" y1="0" x2="100%" y2="0" fill="#000" stroke-width="1" /> -->
-            <line class="meanLine" x1="0" y1="50%" x2="100%" y2="50%" fill="#616161" stroke-width="1" />
-            <line class="lowLine" x1="0" y1="100%" x2="100%" y2="100%" fill="#c2c2c2" stroke-width="1" />
+            <!-- <image class="highLine" x="0" y="0" width="100%" height="1" href="img/line.png" /> -->
+            <line class="highLine" x1="0" y1="0" x2="100%" y2="0" fill="#ffffff" opacity=".3" stroke-width="1" />
+            <line class="meanLine" x1="0" y1="50%" x2="100%" y2="50%" fill="#ffffff" opacity=".3" stroke-width="1" />
+            <line class="lowLine" x1="0" y1="100%" x2="100%" y2="100%" fill="#ffffff" opacity=".3" stroke-width="1" />
            
             <!-- <use id="goToLargeGraph" class="dialog-half-button-right" href="#square-button-negative" opacity="0">
               <set href="#text" attributeName="text-buffer" to="" />
               <set href="#text" attributeName="text-anchor" to="middle" />
             </use> -->
-            <use id="goToLargeGraph" href="#text-button"  opacity="0">
+            <!-- <use id="goToLargeGraph" href="#text-button"  opacity="0">
                 <set href="#text" attributeName="text-buffer" to="" />
-            </use>
+            </use> -->
             <text id="high" class="xs-text" text-anchor="end" />
             <text id="low" class="xs-text" />
             <circle class="graphPoints" cx="4%" cy="50%" r="3" />

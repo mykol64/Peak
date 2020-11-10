@@ -42,10 +42,10 @@ export default class alerts {
     alertArrows.href = "../resources/img/arrows/" + bg.direction + ".png";
     alertArrows.style.display = "inline";
     console.log("app - Alerts - Check()");
-    sgv.style.fill = "#75bd78";
-    largeGraphsSgv.style.fill = "#75bd78";
-    errorLine.style.fill = "#75bd78";
-    // largeGraphErrorLine.style.fill ="#75bd78";
+    sgv.style.fill = "#1AD36B";
+    largeGraphsSgv.style.fill = "#1AD36B";
+    errorLine.style.fill = "#1AD36B";
+    // largeGraphErrorLine.style.fill ="#1AD36B";
     popupLeadText.text = "Check Blood Sugar!";
 
     let timeSenseLastSGV = dateTime.getTimeSenseLastSGV(bg.datetime)[1];

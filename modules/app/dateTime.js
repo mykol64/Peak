@@ -85,7 +85,7 @@ export default class dateTime {
       timeSense = "~" + Math.floor(secondsDiff / 3600) + "h";
       timeSenseNumber = Math.floor(secondsDiff / 60);
     } else if (secondsDiff > 0) {
-      timeSense = Math.floor(secondsDiff / 60) + " min ago";
+      timeSense = Math.floor(secondsDiff / 60) + "m ago";
       timeSenseNumber = Math.floor(secondsDiff / 60);
     }
     return [timeSense, timeSenseNumber];

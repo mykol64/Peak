@@ -10,7 +10,7 @@
 
 .xs-text {
   font-size: 15;
-  font-family: Seville-Condensed;
+  font-family: System-Regular;
   font-weight: regular;
   width: 100%;
   height: 100%;
@@ -18,9 +18,19 @@
   text-length: 64;
 }
 
+.h4 {
+  font-size: 26;
+  font-family:  System-Regular;
+  font-weight: regular;
+  width: 100%;
+  height: 100%;
+  fill: white;
+  text-length: 64;
+} 
+
 .h3 {
   font-size: 45;
-  font-family:  Colfax-Medium;
+  font-family:  System-Medium;
   font-weight: regular;
   width: 100%;
   height: 100%;
@@ -29,7 +39,7 @@
 } 
 .h2 {
   font-size: 60;
-  font-family: SevilleSharp-Regular;
+  font-family: System-Regular;
   width: 100%;
   height: 100%;
   fill: white;
@@ -45,7 +55,8 @@
 }
 
 .text-gray{
-  fill: #6f6f6f;
+  fill: white;
+  opacity: .8;
 }
 
 #battery-level {
@@ -134,23 +145,30 @@
   opacity: 0;
 }
 
-#steps {
-  x: 9%;
-  y: 76%;
+#heartIcon {
+  x: 36;
+  y: 85%; 
 }
+
 #heart {
-  x: 9%;
-  y: 85%;
+  x: $+8;
+  y: 90%;
+  text-length: 4;
+  width: 50;
 }
 
 #stepIcon {
-  x: 3%;
-  y: 71%; 
+  x: $+8;
+  y: 85%; 
 }
-#heartIcon {
-  x: 3%;
-  y: 80%; 
+
+#steps {
+  x: $+8;
+  y: 90%;
+  text-length: 8;
+  width: 90;
 }
+
 .stat-image{
   width: 16;
   height: 16;
@@ -190,10 +208,10 @@
   fill: black;
 }
 #goToLargeGraph {
-  y: 25%;
-  x: 20%;
-  width: 145;
-  height: 90;
+  y: 32;
+  x: 32;
+  width: 96;
+  height: 40;
   fill: black;
 }
 

@@ -21,7 +21,7 @@ export default class batteryLevels {
     console.log('app - batteryLevels - get()')
     let percent = Math.floor(battery.chargeLevel)
     let level = .3 * percent;
-    let color = '#75bd78';
+    let color = '#1AD36B';
     if(percent <= 30 && percent >= 15) {
       color = 'orange';
     } else if( percent <= 15) {

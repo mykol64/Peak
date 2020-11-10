@@ -253,11 +253,11 @@ function update() {
     ) {
       steps.text = currentBgFromBloodSugars[data.settings.layoutThree];
       stepIcon.style.display = "none";
-      steps.x = 10;
+      // steps.x = 10;
     } else {
       steps.text = commas(userActivity.get().steps);
       stepIcon.style.display = "inline";
-      steps.x = 35;
+      // steps.x = 35;
     }
 
     if (
@@ -266,11 +266,11 @@ function update() {
     ) {
       heart.text = currentBgFromBloodSugars[data.settings.layoutFour];
       heartIcon.style.display = "none";
-      heart.x = 10;
+      // heart.x = 10;
     } else {
       heart.text = userActivity.get().heartRate;
       heartIcon.style.display = "inline";
-      heart.x = 35;
+      // heart.x = 35;
     }
 
     sgv.text = currentBgFromBloodSugars.currentbg;
