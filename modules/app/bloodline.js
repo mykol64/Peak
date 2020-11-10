@@ -132,7 +132,7 @@ export default class bloodline {
       try {
         let bg = smallReverseBloodsugars[index];
         if(smallReverseBloodsugars[index].sgv === 'LOS') {
-          graphPoints[index].style.opacity = 0;
+          graphPoints[index].style.opacity = .05;
         } else {
           graphPoints[index].style.opacity = .045*index+.04;
           let pointY = (height - (height * (Math.round(((bg.sgv - ymin) / (ymax - ymin)) * 100) / 100)));
