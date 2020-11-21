@@ -20,7 +20,7 @@ import DateTime from "./dateTime.js";
 const transfer = new Transfer();
 
 let sgv = document.getElementById("sgv");
-let largeGraphsSgv = document.getElementById("largeGraphsSgv");
+// let largeGraphsSgv = document.getElementById("largeGraphsSgv");
 let errorLine = document.getElementById("errorLine");
 // let largeGraphErrorLine = document.getElementById("largeGraphErrorLine");
 let popup = document.getElementById("popup");
@@ -43,7 +43,7 @@ export default class alerts {
     alertArrows.style.display = "inline";
     console.log("app - Alerts - Check()");
     sgv.style.fill = "#1AD36B";
-    largeGraphsSgv.style.fill = "#1AD36B";
+    // largeGraphsSgv.style.fill = "#1AD36B";
     errorLine.style.fill = "#1AD36B";
     // largeGraphErrorLine.style.fill ="#1AD36B";
     popupLeadText.text = "Check Blood Sugar!";
@@ -64,7 +64,7 @@ export default class alerts {
         }
       }
       sgv.style.fill = "#de4430";
-      largeGraphsSgv.style.fill = "#de4430";
+      // largeGraphsSgv.style.fill = "#de4430";
 
       popupTitle.style.fill = "#de4430";
       errorLine.style.fill = "#de4430";
@@ -85,14 +85,14 @@ export default class alerts {
         }
       }
       sgv.style.fill = "orange";
-      largeGraphsSgv.style.fill = "orange";
+      // largeGraphsSgv.style.fill = "orange";
 
       popupTitle.style.fill = "orange";
       errorLine.style.fill = "orange";
       // largeGraphErrorLine.style.fill ="orange";
       if (bg.sgv >= parseInt(settings.highThreshold) + 35) {
         sgv.style.fill = "#de4430";
-        largeGraphsSgv.style.fill = "#de4430";
+        // largeGraphsSgv.style.fill = "#de4430";
         popupTitle.style.fill = "#de4430";
         errorLine.style.fill = "#de4430";
         // largeGraphErrorLine.style.fill ="#de4430";

@@ -207,13 +207,13 @@
   height: 100;
   fill: black;
 }
-#goToLargeGraph {
+/* #goToLargeGraph {
   y: 32;
   x: 32;
   width: 96;
   height: 40;
   fill: black;
-}
+} */
 
 #errorLine {
   x1: 68%;
@@ -229,11 +229,11 @@
   width: 40;
   opacity: .3;
 }
-#largeGraphHigh {
+/* #largeGraphHigh {
   x: 98%;
   y: 30%;
   width: 40;
-}
+} */
 
 #mean {
   x: 100%+9;
@@ -246,11 +246,11 @@
   width: 40;
   opacity: .3;
 }
-#largeGraphLow {
+/* #largeGraphLow {
   x: 97%;
   y: 88%;
   width: 40;
-}
+} */
 
 #degreeIcon {
   width: 8;
@@ -301,7 +301,7 @@
   height: 50;
 }
 
-#largeGraphsSgv {
+/* #largeGraphsSgv {
   text-anchor:"end";
   x: 95%;
   y: 28%;
@@ -361,7 +361,7 @@
 #largeGraphCob {
   x: 9%;
   y: 67%;
-}
+} */
 
 #predictedBg {
   x: 3%;
@@ -373,7 +373,7 @@
   y: 33%;
 }
 
-#largeGraphTime {
+/* #largeGraphTime {
   x: 20%;
   y: 15%;
 }
@@ -389,7 +389,7 @@
   x2: 79%;
   y2: 19%;
   fill: white;
-}
+} */
 
 #alertArrows {
   x: 70%;

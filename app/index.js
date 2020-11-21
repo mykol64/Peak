@@ -39,25 +39,23 @@ let main = document.getElementById("main");
 let sgv = document.getElementById("sgv");
 let rawbg = document.getElementById("rawbg");
 let tempBasal = document.getElementById("tempBasal");
-let largeGraphsSgv = document.getElementById("largeGraphsSgv");
+// let largeGraphsSgv = document.getElementById("largeGraphsSgv");
 let delta = document.getElementById("delta");
 let deltaUpdated = document.getElementById("delta-updated");
-let largeGraphDelta = document.getElementById("largeGraphDelta");
+// let largeGraphDelta = document.getElementById("largeGraphDelta");
 // let timeOfLastSgv = document.getElementById("timeOfLastSgv");
-let largeGraphTimeOfLastSgv = document.getElementById(
-  "largeGraphTimeOfLastSgv"
-);
-let largeGraphIob = document.getElementById("largeGraphIob");
-let largeGraphCob = document.getElementById("largeGraphCob");
+// let largeGraphTimeOfLastSgv = document.getElementById("largeGraphTimeOfLastSgv");
+// let largeGraphIob = document.getElementById("largeGraphIob");
+// let largeGraphCob = document.getElementById("largeGraphCob");
 let iob = document.getElementById("iob");
 let cob = document.getElementById("cob");
 
 let dateElement = document.getElementById("date");
 let timeElement = document.getElementById("time");
-let largeGraphTime = document.getElementById("largeGraphTime");
+// let largeGraphTime = document.getElementById("largeGraphTime");
 let weather = document.getElementById("weather");
 let arrows = document.getElementById("arrows");
-let largeGraphArrows = document.getElementById("largeGraphArrows");
+// let largeGraphArrows = document.getElementById("largeGraphArrows");
 let alertArrows = document.getElementById("alertArrows");
 // let batteryLevel = document.getElementById("battery-level");
 let steps = document.getElementById("steps");
@@ -65,7 +63,7 @@ let stepIcon = document.getElementById("stepIcon");
 let heart = document.getElementById("heart");
 let heartIcon = document.getElementById("heartIcon");
 let bgColor = document.getElementById("bgColor");
-let largeGraphBgColor = document.getElementById("largeGraphBgColor");
+// let largeGraphBgColor = document.getElementById("largeGraphBgColor");
 // let batteryPercent = document.getElementById("batteryPercent");
 // let batteryAlert = document.getElementById("battery-alert");
 let popup = document.getElementById("popup");
@@ -73,14 +71,14 @@ let dismiss = popup.getElementById("dismiss");
 let errorText = document.getElementById("error");
 let popupTitle = document.getElementById("popup-title");
 let degreeIcon = document.getElementById("degreeIcon");
-let goToLargeGraph = document.getElementById("goToLargeGraph");
+// let goToLargeGraph = document.getElementById("goToLargeGraph");
 
-let largeGraphLoopStatus = document.getElementById("largeGraphLoopStatus");
-let largeGraphView = document.getElementById("largeGraphView");
-let exitLargeGraph = document.getElementById("exitLargeGraph");
+// let largeGraphLoopStatus = document.getElementById("largeGraphLoopStatus");
+// let largeGraphView = document.getElementById("largeGraphView");
+// let exitLargeGraph = document.getElementById("exitLargeGraph");
 
-let largeGraphSyringe = document.getElementById("largeGraphSyringe");
-let largeGraphHamburger = document.getElementById("largeGraphHamburger");
+// let largeGraphSyringe = document.getElementById("largeGraphSyringe");
+// let largeGraphHamburger = document.getElementById("largeGraphHamburger");
 let syringe = document.getElementById("syringe");
 let hamburger = document.getElementById("hamburger");
 let predictedBg = document.getElementById("predictedBg");
@@ -123,11 +121,11 @@ sgv.text = "---";
 rawbg.text = "";
 delta.text = "";
 deltaUpdated.text = "";
-largeGraphDelta.text = "";
+// largeGraphDelta.text = "";
 iob.text = "0.0";
 cob.text = "0.0";
-largeGraphIob.text = "0.0";
-largeGraphCob.text = "0.0";
+// largeGraphIob.text = "0.0";
+// largeGraphCob.text = "0.0";
 dateElement.text = "";
 // timeOfLastSgv.text = "";
 weather.text = "--";
@@ -136,13 +134,13 @@ heart.text = "--";
 // batteryPercent.text = "%";
 // batteryAlert.style.opacity = 100;
 bgColor.gradient.colors.c1 = "#390263";
-largeGraphBgColor.gradient.colors.c1 = "#390263";
+// largeGraphBgColor.gradient.colors.c1 = "#390263";
 errorText.text = "";
 update();
 setInterval(update, 10000);
 
 timeElement.text = dateTime.getTime();
-largeGraphTime.text = dateTime.getTime();
+// largeGraphTime.text = dateTime.getTime();
 // batteryLevel.width = batteryLevels.get().level;
 
 inbox.onnewfile = () => {
@@ -178,7 +176,7 @@ function update() {
     // batteryPercent.text = "" + batteryLevels.get().percent + "%";
     // batteryAlert.style.opacity = batteryWarning.get().opacity;
     timeElement.text = dateTime.getTime(data.settings.timeFormat);
-    largeGraphTime.text = dateTime.getTime(data.settings.timeFormat);
+    // largeGraphTime.text = dateTime.getTime(data.settings.timeFormat);
 
     dismissHighFor = data.settings.dismissHighFor;
     dismissLowFor = data.settings.dismissLowFor;
@@ -189,8 +187,8 @@ function update() {
     bgColor.gradient.colors.c1 = data.settings.bgColor;
     bgColor.gradient.colors.c2 = data.settings.bgColorTwo;
 
-    largeGraphBgColor.gradient.colors.c1 = data.settings.bgColor;
-    largeGraphBgColor.gradient.colors.c2 = data.settings.bgColorTwo;
+    // largeGraphBgColor.gradient.colors.c1 = data.settings.bgColor;
+    // largeGraphBgColor.gradient.colors.c2 = data.settings.bgColorTwo;
 
     // setTextColor(data.settings.textColor);
     // bloodsugars
@@ -212,14 +210,14 @@ function update() {
       iob.x = 35;
       if (currentBgFromBloodSugars.iob && currentBgFromBloodSugars.iob != 0) {
         iob.text = currentBgFromBloodSugars.iob + "";
-        largeGraphIob.text = currentBgFromBloodSugars.iob + "";
+        // largeGraphIob.text = currentBgFromBloodSugars.iob + "";
         syringe.style.display = "inline";
-        largeGraphSyringe.style.display = "inline";
+        // largeGraphSyringe.style.display = "inline";
       } else {
         iob.text = "";
-        largeGraphIob.text = "";
+        // largeGraphIob.text = "";
         syringe.style.display = "none";
-        largeGraphSyringe.style.display = "none";
+        // largeGraphSyringe.style.display = "none";
       }
     }
 
@@ -236,14 +234,14 @@ function update() {
       cob.x = 35;
       if (currentBgFromBloodSugars.cob && currentBgFromBloodSugars.cob != 0) {
         cob.text = currentBgFromBloodSugars.cob + "";
-        largeGraphCob.text = currentBgFromBloodSugars.cob + "";
+        // largeGraphCob.text = currentBgFromBloodSugars.cob + "";
         hamburger.style.display = "inline";
-        largeGraphHamburger.style.display = "inline";
+        // largeGraphHamburger.style.display = "inline";
       } else {
         cob.text = "";
-        largeGraphCob.text = "";
+        // largeGraphCob.text = "";
         hamburger.style.display = "none";
-        largeGraphHamburger.style.display = "none";
+        // largeGraphHamburger.style.display = "none";
       }
     }
 
@@ -274,7 +272,7 @@ function update() {
     }
 
     sgv.text = currentBgFromBloodSugars.currentbg;
-    largeGraphsSgv.text = currentBgFromBloodSugars.currentbg;
+    // largeGraphsSgv.text = currentBgFromBloodSugars.currentbg;
     if (currentBgFromBloodSugars.rawbg) {
       rawbg.text = currentBgFromBloodSugars.rawbg + " ";
     } else {
@@ -293,14 +291,10 @@ function update() {
       predictedBg.text = "";
     }
 
-    // timeOfLastSgv.text = dateTime.getTimeSenseLastSGV(
-    //   currentBgFromBloodSugars.datetime
-    // )[0];
+    // timeOfLastSgv.text = dateTime.getTimeSenseLastSGV(currentBgFromBloodSugars.datetime)[0];
 
 
-    largeGraphTimeOfLastSgv.text = dateTime.getTimeSenseLastSGV(
-      currentBgFromBloodSugars.datetime
-    )[0];
+    // largeGraphTimeOfLastSgv.text = dateTime.getTimeSenseLastSGV(currentBgFromBloodSugars.datetime)[0];
 
     dateElement.text = dateTime.getDate(
       data.settings.dateFormat,
@@ -344,8 +338,8 @@ function update() {
       deltaText = "+" + deltaText;
     }
     delta.text = deltaText + " " + data.settings.glucoseUnits;
-    largeGraphDelta.text = deltaText + " " + data.settings.glucoseUnits;
-    largeGraphLoopStatus.text = ""; // currentBgFromBloodSugars.loopstatus;
+    // largeGraphDelta.text = deltaText + " " + data.settings.glucoseUnits;
+    // largeGraphLoopStatus.text = ""; // currentBgFromBloodSugars.loopstatus;
 
     deltaUpdated.text = deltaText + " " + data.settings.glucoseUnits + ", " + dateTime.getTimeSenseLastSGV(
       currentBgFromBloodSugars.datetime
@@ -353,8 +347,7 @@ function update() {
 
     arrows.href =
       "../resources/img/arrows/" + currentBgFromBloodSugars.direction + ".png";
-    largeGraphArrows.href =
-      "../resources/img/arrows/" + currentBgFromBloodSugars.direction + ".png";
+    // largeGraphArrows.href = "../resources/img/arrows/" + currentBgFromBloodSugars.direction + ".png";
 
     graph.update(
       data.bloodSugars.bgs,
@@ -363,11 +356,11 @@ function update() {
       data.settings
     );
 
-    if (data.settings.largeGraph) {
-      goToLargeGraph.style.display = "inline";
-    } else {
-      goToLargeGraph.style.display = "none";
-    }
+    // if (data.settings.largeGraph) {
+    //   goToLargeGraph.style.display = "inline";
+    // } else {
+    //   goToLargeGraph.style.display = "none";
+    // }
     // if (data.settings.treatments) {
     //   goToTreatment.style.display = "inline";
     // } else {
@@ -381,7 +374,7 @@ function update() {
     // batteryPercent.text = "" + batteryLevels.get().percent + "%";
 
     timeElement.text = dateTime.getTime();
-    largeGraphTime.text = dateTime.getTime();
+    // largeGraphTime.text = dateTime.getTime();
 
     dateElement.text = dateTime.getDate();
   }
@@ -417,15 +410,15 @@ function setTextColor(color) {
     "time",
     "high",
     "low",
-    "largeGraphHigh",
-    "largeGraphLow",
-    "largeGraphDelta",
-    "largeGraphTimeOfLastSgv",
-    "largeGraphIob",
-    "largeGraphCob",
+    // "largeGraphHigh",
+    // "largeGraphLow",
+    // "largeGraphDelta",
+    // "largeGraphTimeOfLastSgv",
+    // "largeGraphIob",
+    // "largeGraphCob",
     "predictedBg",
-    "largeGraphTime",
-    "largeGraphLoopStatus",
+    // "largeGraphTime",
+    // "largeGraphLoopStatus",
     "tempBasal",
   ];
   domElemets.forEach((ele) => {
@@ -433,26 +426,26 @@ function setTextColor(color) {
   });
 }
 
-goToLargeGraph.onclick = (e) => {
-  console.log("goToLargeGraph Activated!");
-  vibration.start("bump");
-  largeGraphView.style.display = "inline";
-  main.style.display = "none";
-};
+// goToLargeGraph.onclick = (e) => {
+//   console.log("goToLargeGraph Activated!");
+//   vibration.start("bump");
+//   largeGraphView.style.display = "inline";
+//   main.style.display = "none";
+// };
 
-exitLargeGraph.onclick = (e) => {
-  console.log("exitLargeGraph Activated!");
-  vibration.start("bump");
-  largeGraphView.style.display = "none";
-  main.style.display = "inline";
-};
+// exitLargeGraph.onclick = (e) => {
+//   console.log("exitLargeGraph Activated!");
+//   vibration.start("bump");
+//   largeGraphView.style.display = "none";
+//   main.style.display = "inline";
+// };
 
 timeElement.onclick = (e) => {
   console.log("FORCE Activated!");
   transfer.send(dataToSend);
   vibration.start("bump");
   arrows.href = "../resources/img/arrows/loading.png";
-  largeGraphArrows.href = "../resources/img/arrows/loading.png";
+  // largeGraphArrows.href = "../resources/img/arrows/loading.png";
   alertArrows.href = "../resources/img/arrows/loading.png";
 };
 

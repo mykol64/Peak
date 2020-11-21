@@ -350,13 +350,13 @@ export default class settings {
       settingsStorage.setItem("textColor", JSON.stringify({ name: textColor }));
     }
 
-    let largeGraph = null;
-    if (settingsStorage.getItem("largeGraph")) {
-      largeGraph = JSON.parse(settingsStorage.getItem("largeGraph"));
-    } else if (!largeGraph) {
-      largeGraph = true;
-      settingsStorage.setItem("largeGraph", true);
-    }
+    // let largeGraph = null;
+    // if (settingsStorage.getItem("largeGraph")) {
+    //   largeGraph = JSON.parse(settingsStorage.getItem("largeGraph"));
+    // } else if (!largeGraph) {
+    //   largeGraph = true;
+    //   settingsStorage.setItem("largeGraph", true);
+    // }
 
     let treatments = null;
     if (settingsStorage.getItem("treatments")) {
@@ -548,7 +548,7 @@ export default class settings {
       textColor,
       dismissHighFor,
       dismissLowFor,
-      largeGraph,
+      // largeGraph,
       treatments,
       highAlerts,
       lowAlerts,

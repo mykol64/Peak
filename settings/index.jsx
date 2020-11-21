@@ -228,23 +228,6 @@ function mySettings(props) {
           </Text>
         }
       >
-        <Text bold align="center">
-          Graph
-        </Text>
-        {props.settings.dataSource ? (
-          JSON.parse(props.settings.dataSource).values[0].value ==
-          "nightscout" ? (
-            <Toggle
-              settingsKey="enableSmallGraphPrediction"
-              label="Main Graph Predictions"
-            />
-          ) : null
-        ) : null}
-        <Toggle settingsKey="largeGraph" label="Large graph popup screen" />
-        <Text>
-          Tap the lower right hand side of the watch faces screen to view the
-          larger graph popup screen.
-        </Text>
 
         <Text bold align="center">
           Background Color
@@ -254,11 +237,11 @@ function mySettings(props) {
           centered={true}
           settingsKey="bgColor"
           colors={[
+            { color: "#000000" },
             { color: "#390263" },
             { color: "#4D86FF" },
             { color: "#aa2c73" },
             { color: "#025C63" },
-            { color: "#000000" },
             { color: "#FFFFFF" },
           ]}
         />
