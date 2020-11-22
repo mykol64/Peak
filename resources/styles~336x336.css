@@ -119,6 +119,8 @@
   text-anchor:"end";
   x: 128;
   y: 64;
+  width: 100%;
+  height: 72;
 }
 
 #timeOfLastSgv{
