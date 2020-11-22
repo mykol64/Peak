@@ -120,7 +120,7 @@ function disableAlertsFalse() {
 sgv.text = "---";
 rawbg.text = "";
 delta.text = "";
-deltaUpdated.text = "";
+deltaUpdated.text = "-, -m ago";
 // largeGraphDelta.text = "";
 iob.text = "0.0";
 cob.text = "0.0";
@@ -133,7 +133,7 @@ steps.text = "--";
 heart.text = "--";
 // batteryPercent.text = "%";
 // batteryAlert.style.opacity = 100;
-bgColor.gradient.colors.c1 = "#390263";
+bgColor.gradient.colors.c1 = "#000000";
 // largeGraphBgColor.gradient.colors.c1 = "#390263";
 errorText.text = "";
 update();
@@ -449,7 +449,7 @@ function setTextColor(color) {
 //   main.style.display = "inline";
 // };
 
-timeElement.onclick = (e) => {
+sgv.onclick = (e) => {
   console.log("FORCE Activated!");
   transfer.send(dataToSend);
   vibration.start("bump");

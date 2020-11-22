@@ -16,7 +16,7 @@
 
         <image href="img/arrows/None.png" id="arrows" />
         <!-- <text font-size="84" text-anchor="middle" alignment-baseline="middle" class="h1" id="time" pointer-events="visible" /> -->
-        <text font-size="45" text-anchor="end" class="h2" id="sgv" pointer-events="all" />
+        <!-- <text font-size="45" text-anchor="end" class="h2" id="sgv" pointer-events="all" /> -->
         <image class="stat-image" href="img/heart.png" fill="white" id="heartIcon" />
         <text class="text" id="heart" />
         <image class="stat-image" href="img/step.png" fill="white" id="stepIcon" />
@@ -77,6 +77,7 @@
 
         <text font-size="84" text-anchor="middle" alignment-baseline="middle" class="h1" id="time" pointer-events="visible" />
         <text text-anchor="middle" class="text text-gray" id="date" />
+        <text font-size="45" text-anchor="end" class="h2" id="sgv" pointer-events="all" />
 
         <!-- Alert -->
         <svg id="popup" display="none">
