@@ -337,13 +337,22 @@ function update() {
     if (deltaText > 0) {
       deltaText = "+" + deltaText;
     }
-    delta.text = deltaText + " " + data.settings.glucoseUnits;
+
+    delta.text = deltaText + " " + data.settings.glucoseUnits;  
+
     // largeGraphDelta.text = deltaText + " " + data.settings.glucoseUnits;
     // largeGraphLoopStatus.text = ""; // currentBgFromBloodSugars.loopstatus;
 
-    deltaUpdated.text = deltaText + " " + data.settings.glucoseUnits + ", " + dateTime.getTimeSenseLastSGV(
-      currentBgFromBloodSugars.datetime
-    )[0];
+    // hide glucose units if set in settings
+    if (data.settings.hideGlucoseUnits == true) {
+      deltaUpdated.text = deltaText + ", " + dateTime.getTimeSenseLastSGV(
+        currentBgFromBloodSugars.datetime
+      )[0];  
+    } else {
+      deltaUpdated.text = deltaText + " " + data.settings.glucoseUnits + ", " + dateTime.getTimeSenseLastSGV(
+        currentBgFromBloodSugars.datetime
+      )[0];  
+    }
 
     arrows.href =
       "../resources/img/arrows/" + currentBgFromBloodSugars.direction + ".png";

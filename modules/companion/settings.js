@@ -123,6 +123,22 @@ export default class settings {
       );
     }
 
+    let hideGlucoseUnits = null;
+    if (settingsStorage.getItem("hideGlucoseUnits")) {
+      hideGlucoseUnits = JSON.parse(settingsStorage.getItem("hideGlucoseUnits"));
+    } else if (!hideGlucoseUnits) {
+      hideGlucoseUnits = false;
+      settingsStorage.setItem("hideGlucoseUnits", true);
+    }
+
+    // let largeGraph = null;
+    // if (settingsStorage.getItem("largeGraph")) {
+    //   largeGraph = JSON.parse(settingsStorage.getItem("largeGraph"));
+    // } else if (!largeGraph) {
+    //   largeGraph = true;
+    //   settingsStorage.setItem("largeGraph", true);
+    // }
+
     let highThreshold = null;
     if (settingsStorage.getItem("highThreshold")) {
       highThreshold = JSON.parse(settingsStorage.getItem("highThreshold")).name;
@@ -539,6 +555,7 @@ export default class settings {
       highThreshold,
       lowThreshold,
       glucoseUnits,
+      hideGlucoseUnits,
       disableAlert,
       timeFormat,
       dateFormat,
