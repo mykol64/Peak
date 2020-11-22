@@ -162,32 +162,32 @@ export default class bloodline {
     });  
     
     // 47 loops 
-//     for (let index = 0; index < reverseBloodsugars.length; index++) {
-//       if(reverseBloodsugars[index].sgv === 'LOS') {
-//         largeGraphGraphPoints[index].style.opacity = 0;
-//       } else {
-//         largeGraphGraphPoints[index].style.opacity = 1;
-//         let pointY = (height - (height * (Math.round(((reverseBloodsugars[index].sgv - ymin) / (ymax - ymin)) * 100) / 100)));
-//         //  - TODO: compare time of current sgv to time of last sgv and make sure its equal 5m if not add spacing
-//         largeGraphGraphPoints[index].cy = pointY;
-//         largeGraphGraphPoints[index].style.fill = "#708090"; // gray
-//         //  - check sgv point is in range if not change color 
-//         if(reverseBloodsugars[index].p) {
-//           largeGraphGraphPoints[index].style.fill = "#f76ac5"; // pink   
-//         } else if (parseInt(reverseBloodsugars[index].sgv, 10) <= low){
-//           //- INFO: largeGraphGraphPoints has to be at the 22 index becase it is ALL the points on both graphs combined
-//           largeGraphGraphPoints[index].style.fill = "#de4430"; //red
-//         } else if ( parseInt(reverseBloodsugars[index].sgv, 10) >= high) {
-//           largeGraphGraphPoints[index].style.fill = "orange"; // orange 
-//           if ( parseInt(reverseBloodsugars[index].sgv, 10) >=  (parseInt(high) + 35)) {
-//              largeGraphGraphPoints[index].style.fill = "#de4430"; // red 
-//           }
-//         } else {
-//           largeGraphGraphPoints[index].style.fill = "#1AD36B"; // green 
-//         }
-//       }
-//     }     
-//     reverseBloodsugars.reverse();
+    for (let index = 0; index < reverseBloodsugars.length; index++) {
+      if(reverseBloodsugars[index].sgv === 'LOS') {
+        // largeGraphGraphPoints[index].style.opacity = 0;
+      } else {
+        // largeGraphGraphPoints[index].style.opacity = 1;
+        let pointY = (height - (height * (Math.round(((reverseBloodsugars[index].sgv - ymin) / (ymax - ymin)) * 100) / 100)));
+        //  - TODO: compare time of current sgv to time of last sgv and make sure its equal 5m if not add spacing
+        // largeGraphGraphPoints[index].cy = pointY;
+        // largeGraphGraphPoints[index].style.fill = "#708090"; // gray
+        //  - check sgv point is in range if not change color 
+        if(reverseBloodsugars[index].p) {
+          // largeGraphGraphPoints[index].style.fill = "#f76ac5"; // pink   
+        } else if (parseInt(reverseBloodsugars[index].sgv, 10) <= low){
+          //- INFO: largeGraphGraphPoints has to be at the 22 index becase it is ALL the points on both graphs combined
+          // largeGraphGraphPoints[index].style.fill = "#de4430"; //red
+        } else if ( parseInt(reverseBloodsugars[index].sgv, 10) >= high) {
+          // largeGraphGraphPoints[index].style.fill = "orange"; // orange 
+          if ( parseInt(reverseBloodsugars[index].sgv, 10) >=  (parseInt(high) + 35)) {
+            //  largeGraphGraphPoints[index].style.fill = "#de4430"; // red 
+          }
+        } else {
+          // largeGraphGraphPoints[index].style.fill = "#1AD36B"; // green 
+        }
+      }
+    }     
+    reverseBloodsugars.reverse();
   }
 };
 
