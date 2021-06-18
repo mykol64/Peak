@@ -55,6 +55,10 @@ let timeElement = document.getElementById("time");
 // let largeGraphTime = document.getElementById("largeGraphTime");
 let weather = document.getElementById("weather");
 let arrows = document.getElementById("arrows");
+
+// Get a handle on the instance
+var loadingSpinnerInstance = document.getElementById("loading-spinner-instance");
+
 // let largeGraphArrows = document.getElementById("largeGraphArrows");
 let alertArrows = document.getElementById("alertArrows");
 // let batteryLevel = document.getElementById("battery-level");
@@ -453,9 +457,11 @@ sgv.onclick = (e) => {
   console.log("FORCE Activated!");
   transfer.send(dataToSend);
   vibration.start("bump");
-  arrows.href = "../resources/img/arrows/loading.png";
+  arrows.href = "../resources/img/arrows/None.png";
+  arrows.style.opacity = 0;
   // largeGraphArrows.href = "../resources/img/arrows/loading.png";
   alertArrows.href = "../resources/img/arrows/loading.png";
+  loadingSpinnerInstance.animate("loading");
 };
 
 // wait 2 seconds
