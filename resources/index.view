@@ -22,7 +22,7 @@
                     <g id="spinnergroup">
                         <image href="img/arrows/loading.png" style="opacity: 0"/>
                         <animate attributeName="opacity" begin="loading"
-                            from="1" to="0" dur="1" final="restore" />
+                            from="0" to="1" dur="1" final="restore" />
                         <animateTransform attributeType="rotate" from="0, 155, 35" to="360, 155, 35" begin="loading" dur="1" final="restore" />
                     </g>
                 </symbol>
