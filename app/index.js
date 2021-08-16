@@ -17,7 +17,7 @@ import fs from "fs";
 import { vibration } from "haptics";
 import DateTime from "../modules/app/dateTime.js";
 // import BatteryLevels from "../modules/app/batteryLevels.js";
-// import BatteryWarning from "../modules/app/batteryWarning.js";
+import BatteryWarning from "../modules/app/batteryWarning.js";
 import Graph from "../modules/app/bloodline.js";
 import UserActivity from "../modules/app/userActivity.js";
 import Alerts from "../modules/app/alerts.js";
@@ -28,7 +28,7 @@ import { memory } from "system";
 
 const dateTime = new DateTime();
 // const batteryLevels = new BatteryLevels();
-// const batteryWarning = new BatteryWarning();
+const batteryWarning = new BatteryWarning();
 const graph = new Graph();
 const userActivity = new UserActivity();
 const alerts = new Alerts();
@@ -69,7 +69,7 @@ let heartIcon = document.getElementById("heartIcon");
 let bgColor = document.getElementById("bgColor");
 // let largeGraphBgColor = document.getElementById("largeGraphBgColor");
 // let batteryPercent = document.getElementById("batteryPercent");
-// let batteryAlert = document.getElementById("battery-alert");
+let batteryAlert = document.getElementById("battery-alert");
 let popup = document.getElementById("popup");
 let dismiss = popup.getElementById("dismiss");
 let errorText = document.getElementById("error");
@@ -136,7 +136,6 @@ weather.text = "--";
 steps.text = "--";
 heart.text = "--";
 // batteryPercent.text = "%";
-// batteryAlert.style.opacity = 100;
 bgColor.gradient.colors.c1 = "#000000";
 // largeGraphBgColor.gradient.colors.c1 = "#390263";
 errorText.text = "";
@@ -181,6 +180,14 @@ function update() {
     // batteryAlert.style.opacity = batteryWarning.get().opacity;
     timeElement.text = dateTime.getTime(data.settings.timeFormat);
     // largeGraphTime.text = dateTime.getTime(data.settings.timeFormat);
+
+    if (batteryWarning.get().visible) {
+      console.log("battery alert should be visible")
+      batteryAlert.style.visibility = "visible";
+    } else {
+      console.log("battery alert returning false")
+      batteryAlert.style.visibility = "hidden"
+    }
 
     dismissHighFor = data.settings.dismissHighFor;
     dismissLowFor = data.settings.dismissLowFor;
@@ -415,7 +422,7 @@ function setTextColor(color) {
     "cob",
     "heart",
     "steps",
-    // "batteryPercent",
+    "batteryPercent",
     "date",
     "delta",
     "deltaUpdated",
