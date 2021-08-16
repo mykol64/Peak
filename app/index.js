@@ -457,11 +457,14 @@ sgv.onclick = (e) => {
   console.log("FORCE Activated!");
   transfer.send(dataToSend);
   vibration.start("bump");
-  arrows.href = "../resources/img/arrows/None.png";
+  // arrows.href = "../resources/img/arrows/None.png";
   arrows.style.opacity = 0;
   // largeGraphArrows.href = "../resources/img/arrows/loading.png";
-  alertArrows.href = "../resources/img/arrows/loading.png";
-  loadingSpinnerInstance.animate("loading");
+  // alertArrows.href = "../resources/img/arrows/loading.png";
+  loadingSpinnerInstance.animate("enable");
+  setTimeout(function () {
+    arrows.style.opacity = 1;
+  }, 3500);
 };
 
 // wait 2 seconds
