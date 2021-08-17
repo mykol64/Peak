@@ -56,8 +56,10 @@ let timeElement = document.getElementById("time");
 let weather = document.getElementById("weather");
 let arrows = document.getElementById("arrows");
 
+
 // Get a handle on the instance
 var loadingSpinnerInstance = document.getElementById("loading-spinner-instance");
+var clockDisplayInstance = document.getElementById("clock-display-instance");
 
 // let largeGraphArrows = document.getElementById("largeGraphArrows");
 let alertArrows = document.getElementById("alertArrows");
@@ -472,6 +474,19 @@ sgv.onclick = (e) => {
   setTimeout(function () {
     arrows.style.opacity = 1;
   }, 3500);
+};
+
+clockDisplayInstance.onclick = (e) => {
+  console.log("Clock tapped!");
+  if (clockDisplayInstance.getElementById("clock-display-group").style.opacity == "0") {
+    clockDisplayInstance.animate("enable");
+    // clockDisplayInstance.groupTransform.scale.x = 1;
+    // clockDisplayInstance.groupTransform.scale.y = 1;
+  } else {
+    clockDisplayInstance.animate("disable");
+    // clockDisplayInstance.groupTransform.scale.x = .5;
+    // clockDisplayInstance.groupTransform.scale.y = .5;
+  }
 };
 
 // wait 2 seconds
