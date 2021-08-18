@@ -95,17 +95,23 @@ export default class bloodline {
     let lowY = (height - (height * (Math.round(((low - ymin) / (ymax - ymin)) * 100) / 100)));
     highLine[0].y1 = highY;
     highLine[0].y2 = highY;
+    highLine[0].y = highY;
     meanLine[0].y1 = (highY + lowY)/2;
     meanLine[0].y2 = (highY + lowY)/2;
+    meanLine[0].y = (highY + lowY)/2;
     lowLine[0].y1 = lowY;
     lowLine[0].y2 = lowY;
+    lowLine[0].y = lowY;
     
     highLine[1].y1 = highY;
     highLine[1].y2 = highY;
+    highLine[1].y = highY;
     meanLine[1].y1 = (highY + lowY)/2;
     meanLine[1].y2 = (highY + lowY)/2;
+    meanLine[1].y = (highY + lowY)/2;
     lowLine[1].y1 = lowY;
     lowLine[1].y2 = lowY;
+    lowLine[1].y = lowY;
     
     highNumber.y = 16;
     lowNumber.y = 180; 
