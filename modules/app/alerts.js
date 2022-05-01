@@ -157,7 +157,7 @@ export default class alerts {
           if (settings.staleData) {
             alertArrows.style.display = "none";
             popupTitle.style.fill = "#de4430";
-            vibration.start("ring");
+            vibration.start("ping");
             popup.style.display = "inline";
             popupTitle.style.display = "inline";
             popupTitle.text = "Stale data";
