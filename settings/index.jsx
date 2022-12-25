@@ -8,7 +8,7 @@ function mySettings(props) {
         <TextImageRow
           label="Glance"
           sublabel="https://github.com/Rytiggy/Glance"
-          icon="https://image.ibb.co/gbWF2H/twerp_bowtie_64.png"
+          // icon="https://image.ibb.co/gbWF2H/twerp_bowtie_64.png"
         />
         <Text>&nbsp;</Text>
         <Text>&nbsp;</Text>

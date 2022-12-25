@@ -16,11 +16,6 @@ const logs = new Logs();
 const applicationId = "d8665ade-9673-4e27-9ff6-92db4ce13d13";
 export default class dexcom {
   async login(dexcomUsername, dexcomPassword, subDomain) {
-    // let body = {
-    //   accountName: dexcomUsername,
-    //   applicationId: "d8665ade-9673-4e27-9ff6-92db4ce13d13",
-    //   password: dexcomPassword,
-    // };
 
     let body = {
       accountName: dexcomUsername,
