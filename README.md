@@ -14,7 +14,7 @@ Peak is a largely superficial fork of [Glance](https://github.com/Rytiggy/Glance
 
 ## Features
 
-###### Note: While the original [Glance](https://github.com/Rytiggy/Glance) works on a variety of Fitbit devices in and with various medical hardware, Peak has currently only been tested on a Fitbit Sense & Versa 3 with Dexcom, and the below features, while technically present, likely need some adjustments
+###### Note: While the original [Glance](https://github.com/Rytiggy/Glance) works on a variety of Fitbit devices in and with various medical hardware, Peak has currently only been tested on a Fitbit Sense & Versa 3 with Dexcom. The below features, while technically present, likely need some adjustments
 
 ### ✅ &nbsp; Tested & Working 
 
