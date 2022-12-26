@@ -116,7 +116,7 @@ function mySettings(props) {
             { name: "mmol", value: "mmol" },
           ]}
         />
-        <Toggle settingsKey="hideGlucoseUnits" label="Hide Glucose Units" />
+        <Toggle settingsKey="showGlucoseUnits" label="Display Glucose Units" />
         <TextInput label="High Threshold" settingsKey="highThreshold" />
         <TextInput label="Low Threshold" settingsKey="lowThreshold" />
         <Toggle settingsKey="disableAlert" label="Disable Alerts" />
