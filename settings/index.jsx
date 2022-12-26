@@ -196,7 +196,7 @@ function mySettings(props) {
             { name: "Month Day", value: "Month Day" },
           ]}
         />
-        <Toggle settingsKey="enableDOW" label="Day of week at end of date" />
+        <Toggle settingsKey="enableDOW" label="Display day of the week" />
       </Section>
 
       <Section
