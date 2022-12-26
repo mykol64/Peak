@@ -139,12 +139,12 @@ function mySettings(props) {
               </Text>
               <Toggle settingsKey="highAlerts" label="High Alerts" />
               <TextInput
-                label="Dismiss high alerts for n minutes"
+                label="Minutes between high alerts"
                 settingsKey="dismissHighFor"
               />
               <Toggle settingsKey="lowAlerts" label="Low Alerts" />
               <TextInput
-                label="Dismiss low alerts for n minutes"
+                label="Minutes between low alerts"
                 settingsKey="dismissLowFor"
               />
               <Toggle settingsKey="rapidRise" label="Rapid Rise Alerts" />
