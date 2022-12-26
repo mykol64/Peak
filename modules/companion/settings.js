@@ -279,7 +279,7 @@ export default class settings {
       dateFormat = JSON.parse(settingsStorage.getItem("dateFormat")).values[0]
         .value;
     } else if (!dateFormat) {
-      dateFormat = "MM/DD/YYYY";
+      dateFormat = "Month Day";
       settingsStorage.setItem(
         "dateFormat",
         JSON.stringify({
@@ -353,7 +353,7 @@ export default class settings {
         }
       }
     } else if (!bgColor) {
-      bgColor = "#4D86FF";
+      bgColor = "#000000";
     }
 
     let textColor = null;

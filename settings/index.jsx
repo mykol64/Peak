@@ -4,30 +4,10 @@ import { XMLHttpRequest } from "xmlhttprequest";
 function mySettings(props) {
   return (
     <Page>
-      <Text>
-        <TextImageRow
-          label="Glance"
-          sublabel="https://github.com/Rytiggy/Glance"
-          // icon="https://image.ibb.co/gbWF2H/twerp_bowtie_64.png"
-        />
-        <Text>&nbsp;</Text>
-        <Text>&nbsp;</Text>
-        <Text>
-          Glance is a solution for use with Fitbit devices to view your blood
-          glucose levels along with a variety of other health stats on the watch
-          face. You can see your stats at a glance!
-        </Text>
-        <Text>&nbsp;</Text>
-        <Text>
-          <Link source="https://github.com/Rytiggy/Glance/wiki/How-to-set-up-Glance#2-settings">
-            Click here to learn how to set up Glance!
-          </Link>
-        </Text>
-      </Text>
 
       <Section
         title={
-          <Text bold align="center">
+          <Text bold>
             Data Source Settings
           </Text>
         }
@@ -54,7 +34,7 @@ function mySettings(props) {
         {props.settings.dataSource ? (
           JSON.parse(props.settings.dataSource).values[0].value ==
           "nightscout" ? (
-            <Text text="center">
+            <Text>
               https://<Text bold>SiteName</Text>.NightscoutHostSite.com
             </Text>
           ) : null
@@ -74,7 +54,7 @@ function mySettings(props) {
         {props.settings.dataSource ? (
           JSON.parse(props.settings.dataSource).values[0].value ==
           "nightscout" ? (
-            <Text text="center">
+            <Text>
               https://SiteName.<Text bold>NightscoutHostSite</Text>.com
             </Text>
           ) : null
@@ -97,22 +77,19 @@ function mySettings(props) {
           JSON.parse(props.settings.dataSource).values[0].value == "dexcom" ? (
             <Section
               title={
-                <Text bold align="center">
+                <Text bold>
                   Dexcom
                 </Text>
               }
             >
-              <Text bold align="center">
-                Dexcom
-              </Text>
               <TextInput
                 title="Username"
-                label="Username"
+                label="Dexcom Username"
                 settingsKey="dexcomUsername"
               />
               <TextInput
                 title="Password"
-                label="Password"
+                label="Dexcom Password"
                 settingsKey="dexcomPassword"
               />
               <Toggle
@@ -126,7 +103,7 @@ function mySettings(props) {
 
       <Section
         title={
-          <Text bold align="center">
+          <Text bold>
             Glucose Settings
           </Text>
         }
@@ -152,12 +129,12 @@ function mySettings(props) {
           JSON.parse(props.settings.extraGlucoseSettings) == true ? (
             <Section
               title={
-                <Text bold align="center">
+                <Text bold>
                   Extra Glucose Settings
                 </Text>
               }
             >
-              <Text bold align="center">
+              <Text bold>
                 Alerts
               </Text>
               <Toggle settingsKey="highAlerts" label="High Alerts" />
@@ -194,7 +171,7 @@ function mySettings(props) {
 
       <Section
         title={
-          <Text bold align="center">
+          <Text bold>
             Date/Time Settings
           </Text>
         }
@@ -224,13 +201,13 @@ function mySettings(props) {
 
       <Section
         title={
-          <Text bold align="center">
+          <Text bold>
             Layout
           </Text>
         }
       >
 
-        <Text bold align="center">
+        <Text bold>
           Background Color
         </Text>
 
@@ -250,7 +227,7 @@ function mySettings(props) {
         {props.settings.bgColor ? (
           JSON.parse(props.settings.bgColor) == "#FFFFFF" ? (
             <Section title={}>
-              <Text bold align="center">
+              <Text bold>
                 Random Color Generator
               </Text>
               <Text>
@@ -274,7 +251,7 @@ function mySettings(props) {
             "nightscout" ||
           JSON.parse(props.settings.dataSource).values[0].value == "spike" ? (
             <Section>
-              <Text bold align="center">
+              <Text bold>
                 Customize
               </Text>
               <Text>
@@ -348,20 +325,16 @@ function mySettings(props) {
       </Section>
       <Section
         title={
-          <Text bold align="center">
-            Helpful links
+          <Text bold>
+            Help
           </Text>
         }
       >
-        <Text>
-          If you need help getting started with Glance follow the links below!
-        </Text>
         <Link source="https://github.com/Rytiggy/Glance/wiki/How-to-set-up-Glance#2-settings">
           How to set up Glance
         </Link>
         <Text>
-          Note: Tapping on the time should try to force the watch to sync.
-          You'll feel the watch vibrate.
+          Note: Tapping on the reading in the top left will force the watch to sync—the watch will vibrate.
         </Text>
       </Section>
 
@@ -370,7 +343,7 @@ function mySettings(props) {
         JSON.parse(props.settings.toggle) == true ? (
           <Section
             title={
-              <Text bold align="center">
+              <Text bold>
                 Logs
               </Text>
             }
@@ -400,12 +373,12 @@ function mySettings(props) {
 
 registerSettingsPage(mySettings);
 
-// <Text align="center" bold>
+// <Text bold>
 //     Weather
 // </Text>
 // <Select label={`Temperature units`} settingsKey="tempType" options={[ {name:"Fahrenheit", value:"f"}, {name:"Celsius", value:"c"} ]} />
 
-//             <Text bold align="center" align="center">Treatment</Text>
+//             <Text bold>Treatment</Text>
 //             {((props.settings.dataSource) ? ((JSON.parse(props.settings.dataSource).values[0].value == 'xdrip') ?
 //             <Text>xDrip does not support treatments through API calls. maybe in the future it will!</Text> : null) : null)}
 //             {((props.settings.dataSource) ? ((JSON.parse(props.settings.dataSource).values[0].value != 'xdrip') ?
