@@ -6,11 +6,8 @@ function mySettings(props) {
     <Page>
 
       <Section
-        title={
-          <Text bold>
-            Data Source Settings
-          </Text>
-        }
+        title={<Text bold>Data Source Settings</Text>}
+        description={<Text><Text bold>Tip: </Text>Leave "https://" and "www." out of the site address. For example, "google.com" not "https://www.google.com"</Text>}
       >
         <Select
           label={`Data Source`}
@@ -41,14 +38,6 @@ function mySettings(props) {
               placeholder="google.com"
               type="url"
             />
-          ) : null
-        ) : null}
-        {props.settings.dataSource ? (
-          JSON.parse(props.settings.dataSource).values[0].value ==
-          "nightscout" ? (
-            <Text>
-              <Text bold>Tip: </Text>Leave "https://" and "www." out of the site address. For example, "google.com" not "https://www.google.com"
-            </Text>
           ) : null
         ) : null}
         {props.settings.dataSource ? (
@@ -115,49 +104,59 @@ function mySettings(props) {
           settingsKey="extraGlucoseSettings"
           label="Extra Glucose Settings"
         />
+        
+      </Section>
 
-        {props.settings.extraGlucoseSettings ? (
-          JSON.parse(props.settings.extraGlucoseSettings) == true ? (
-            <Section
-              title={
+      <Section 
+          title={
+            <Text bold> 
+              Alert Settings
+            </Text>
+          }
+        >
+          <Toggle
+            settingsKey="enableAlerts"
+            label="Enable Alerts"
+          />
+
+          {props.settings.enableAlerts ? (
+            JSON.parse(props.settings.enableAlerts) == true ? (
+              <Section>
                 <Text bold>
-                  Extra Glucose Settings
+                  Alerts
                 </Text>
-              }
-            >
-              <Text bold>
-                Alerts
-              </Text>
-              <Toggle settingsKey="highAlerts" label="High Alerts" />
-              <TextInput
-                label="Minutes between high alerts"
-                settingsKey="dismissHighFor"
-              />
-              <Toggle settingsKey="lowAlerts" label="Low Alerts" />
-              <TextInput
-                label="Minutes between low alerts"
-                settingsKey="dismissLowFor"
-              />
-              <Toggle settingsKey="rapidRise" label="Rapid Rise Alerts" />
-              <Toggle settingsKey="rapidFall" label="Rapid Fall Alerts" />
-              {props.settings.dataSource ? (
-                JSON.parse(props.settings.dataSource).values[0].value ==
-                "nightscout" ? (
-                  <Toggle settingsKey="loopstatus" label="Loop Status Alerts" />
-                ) : null
-              ) : null}
-              <Toggle settingsKey="staleData" label="Stale Data Alerts" />
-              <TextInput
-                label="Stale data alerts after n minutes"
-                settingsKey="staleDataAlertAfter"
-              />
-              <Toggle
-                settingsKey="resetAlertDismissal"
-                label="Dismiss alarm when back in range"
-              />
-            </Section>
-          ) : null
-        ) : null}
+                <Toggle settingsKey="highAlerts" label="High Alerts" />
+                <TextInput
+                  label="Minutes between high alerts"
+                  settingsKey="dismissHighFor"
+                />
+                <Toggle settingsKey="lowAlerts" label="Low Alerts" />
+                <TextInput
+                  label="Minutes between low alerts"
+                  settingsKey="dismissLowFor"
+                />
+                <Toggle settingsKey="rapidRise" label="Rapid Rise Alerts" />
+                <Toggle settingsKey="rapidFall" label="Rapid Fall Alerts" />
+                {props.settings.dataSource ? (
+                  JSON.parse(props.settings.dataSource).values[0].value ==
+                  "nightscout" ? (
+                    <Toggle settingsKey="loopstatus" label="Loop Status Alerts" />
+                  ) : null
+                ) : null}
+                <Toggle settingsKey="staleData" label="Stale Data Alerts" />
+                <TextInput
+                  label="Stale data alerts after n minutes"
+                  settingsKey="staleDataAlertAfter"
+                />
+                <Toggle
+                  settingsKey="resetAlertDismissal"
+                  label="Dismiss alarm when back in range"
+                />
+              </Section>
+            ) : null
+          ) : null}
+
+
       </Section>
 
       <Section
