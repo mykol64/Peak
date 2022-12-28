@@ -74,19 +74,39 @@ export default class settings {
         );
       }
 
+      let nightscoutToken = null;
+      if (
+        settingsStorage.getItem("nightscoutToken") &&
+        JSON.parse(settingsStorage.getItem("nightscoutToken")).name
+      ) {
+        nightscoutToken = JSON.parse(
+          settingsStorage.getItem("nightscoutToken")
+        ).name;
+      } if (!nightscoutToken) {
+        nightscoutToken = "placeholder";
+        settingsStorage.setItem(
+          "nightscoutToken",
+          JSON.stringify({ name: "" })
+        );
+      }
+
       url =
         "https://" +
         nightscoutSiteName.toLowerCase() +
         "." +
         nightscoutSiteHost +
-        "/pebble" +
-        queryParms;
+        "/pebble" + 
+        queryParms +
+        "&token=" + nightscoutToken;
       extraDataUrl =
         "https://" +
         nightscoutSiteName.toLowerCase() +
         "." +
         nightscoutSiteHost +
-        "/api/v2/properties";
+        "/api/v2/properties" +
+        "&token=" + nightscoutToken;
+
+        console.log(url);
     } else if (dataSource === "xdrip") {
       // xDrip+
       if (dataReceivedFromWatch && dataReceivedFromWatch != null) {

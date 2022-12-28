@@ -68,7 +68,18 @@ function mySettings(props) {
               options={[
                 { name: "Heroku", value: "herokuapp.com" },
                 { name: "Azure", value: "azurewebsites.net" },
+                { name: "Test: Crabdance", value: "crabdance.com" },
               ]}
+            />
+          ) : null
+        ) : null}
+        {props.settings.dataSource ? (
+          JSON.parse(props.settings.dataSource).values[0].value ==
+          "nightscout" ? (
+            <TextInput
+              title="Nightscout Token"
+              label="Nightscout Token (Optional)"
+              settingsKey="nightscoutToken"
             />
           ) : null
         ) : null}
