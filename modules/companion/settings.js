@@ -38,6 +38,26 @@ export default class settings {
     let extraDataUrl = null;
     if (dataSource === "nightscout") {
       // Nightscout
+      let nightscoutAddress = null;
+      if (
+        settingsStorage.getItem("nightscoutAddress") &&
+        JSON.parse(settingsStorage.getItem("nightscoutAddress")).name
+      ) {
+        nightscoutAddress = JSON.parse(
+          settingsStorage.getItem("nightscoutAddress")
+        ).name;
+        if (isURL(nightscoutAddress)) {
+          nightscoutAddress = nightscoutAddress.split("//")[0];
+          console.log(nightscoutAddress);
+        }
+      } else if (!nightscoutAddress) {
+        nightscoutAddress = "placeholder";
+        settingsStorage.setItem(
+          "nightscoutAddress",
+          JSON.stringify({ name: "" })
+        );
+      }
+
       let nightscoutSiteName = null;
       if (
         settingsStorage.getItem("nightscoutSiteName") &&
@@ -59,21 +79,26 @@ export default class settings {
         );
       }
       let nightscoutSiteHost = null;
-      if (settingsStorage.getItem("nightscoutSiteHost")) {
+      if (
+        settingsStorage.getItem("nightscoutSiteHost") &&
+        JSON.parse(settingsStorage.getItem("nightscoutSiteHost")).name
+      ) {
         nightscoutSiteHost = JSON.parse(
           settingsStorage.getItem("nightscoutSiteHost")
-        ).values[0].value;
+        ).name;
+        if (isURL(nightscoutSiteHost)) {
+          nightscoutSiteHost = nightscoutSiteHost.split(".")[0];
+          nightscoutSiteHost = nightscoutSiteHost.split("//")[1];
+          console.log(nightscoutSiteHost);
+        }
       } else if (!nightscoutSiteHost) {
-        nightscoutSiteHost = "herokuapp.com";
+        nightscoutSiteHost = "placeholder";
         settingsStorage.setItem(
           "nightscoutSiteHost",
-          JSON.stringify({
-            selected: [0],
-            values: [{ name: "Heroku", value: "herokuapp.com" }],
-          })
+          JSON.stringify({ name: "" })
         );
       }
-
+    
       let nightscoutToken = null;
       if (
         settingsStorage.getItem("nightscoutToken") &&
@@ -92,17 +117,19 @@ export default class settings {
 
       url =
         "https://" +
-        nightscoutSiteName.toLowerCase() +
-        "." +
-        nightscoutSiteHost +
+        nightscoutAddress.toLowerCase() +
+        // nightscoutSiteName.toLowerCase() +
+        // "." +
+        // nightscoutSiteHost +
         "/pebble" + 
         queryParms +
         "&token=" + nightscoutToken;
       extraDataUrl =
         "https://" +
-        nightscoutSiteName.toLowerCase() +
-        "." +
-        nightscoutSiteHost +
+        nightscoutAddress.toLowerCase() +
+        // nightscoutSiteName.toLowerCase() +
+        // "." +
+        // nightscoutSiteHost +
         "/api/v2/properties" +
         "&token=" + nightscoutToken;
 

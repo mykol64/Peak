@@ -34,52 +34,31 @@ function mySettings(props) {
         {props.settings.dataSource ? (
           JSON.parse(props.settings.dataSource).values[0].value ==
           "nightscout" ? (
-            <Text>
-              https://<Text bold>SiteName</Text>.NightscoutHostSite.com
-            </Text>
-          ) : null
-        ) : null}
-
-        {props.settings.dataSource ? (
-          JSON.parse(props.settings.dataSource).values[0].value ==
-          "nightscout" ? (
             <TextInput
-              title="Nightscout"
-              label="Site Name"
-              settingsKey="nightscoutSiteName"
-            />
-          ) : null
-        ) : null}
-
-        {props.settings.dataSource ? (
-          JSON.parse(props.settings.dataSource).values[0].value ==
-          "nightscout" ? (
-            <Text>
-              https://SiteName.<Text bold>NightscoutHostSite</Text>.com
-            </Text>
-          ) : null
-        ) : null}
-        {props.settings.dataSource ? (
-          JSON.parse(props.settings.dataSource).values[0].value ==
-          "nightscout" ? (
-            <Select
-              label="Nightscout Host Site"
-              settingsKey="nightscoutSiteHost"
-              options={[
-                { name: "Heroku", value: "herokuapp.com" },
-                { name: "Azure", value: "azurewebsites.net" },
-                { name: "Test: Crabdance", value: "crabdance.com" },
-              ]}
+              title="Nightscout Site Address"
+              label="Site Address"
+              settingsKey="nightscoutAddress"
+              placeholder="google.com"
+              type="url"
             />
           ) : null
         ) : null}
         {props.settings.dataSource ? (
           JSON.parse(props.settings.dataSource).values[0].value ==
           "nightscout" ? (
+            <Text>
+              <Text bold>Tip: </Text>Leave "https://" and "www." out of the site address. For example, "google.com" not "https://www.google.com"
+            </Text>
+          ) : null
+        ) : null}
+        {props.settings.dataSource ? (
+          JSON.parse(props.settings.dataSource).values[0].value ==
+          "nightscout" ? (
             <TextInput
-              title="Nightscout Token"
-              label="Nightscout Token (Optional)"
+              title="Security Token"
+              label="Security Token (Optional)"
               settingsKey="nightscoutToken"
+              type="password"
             />
           ) : null
         ) : null}
@@ -102,6 +81,7 @@ function mySettings(props) {
                 title="Password"
                 label="Dexcom Password"
                 settingsKey="dexcomPassword"
+                type="password"
               />
               <Toggle
                 settingsKey="USAVSInternational"
@@ -263,19 +243,17 @@ function mySettings(props) {
           JSON.parse(props.settings.dataSource).values[0].value == "spike" ? (
             <Section>
               <Text bold>
-                Customize
+                Data Display Slots
               </Text>
               <Text>
-                The customize section is used for customizing the user interface
-                of Glance, you can replace the default values of Glance with
-                other values present.
+                Choose what piece of data to display in each available slot.
               </Text>
               <Text>
                 Note: If the value selected is not present on your data source
                 it will show the default option.
               </Text>
               <Select
-                label={`Layout One`}
+                label={`Slot 1`}
                 settingsKey="layoutOne"
                 options={[
                   { name: "Insulin on board (default)", value: "iob" },
@@ -289,7 +267,7 @@ function mySettings(props) {
                 ]}
               />
               <Select
-                label={`Layout Two`}
+                label={`Slot 2`}
                 settingsKey="layoutTwo"
                 options={[
                   { name: "Carbs on board (default)", value: "cob" },
@@ -303,7 +281,7 @@ function mySettings(props) {
                 ]}
               />
               <Select
-                label={`Layout Three`}
+                label={`Slot 3`}
                 settingsKey="layoutThree"
                 options={[
                   { name: "steps (default)", value: "steps" },
@@ -317,7 +295,7 @@ function mySettings(props) {
                 ]}
               />
               <Select
-                label={`Layout Four`}
+                label={`Slot 4`}
                 settingsKey="layoutFour"
                 options={[
                   { name: "heart (default)", value: "heart" },
