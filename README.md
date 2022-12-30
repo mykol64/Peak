@@ -14,11 +14,17 @@ Tired of medical software looking so... medical? Peak is a fork of [Glance](http
 
 ## Changes from Glance
 
-* Completely new, streamlined & minimal look
-* Additional date display options
-* Tapping the center of the display (the time and date area) toggles the visibility of the time and date
-* Tapping the glucose reading attempts a refresh, and what's that—a basic animation!?
-* Low battery icon only appears when device is at or below 15%
+➕&nbsp; Completely new, streamlined & minimal look
+
+➕&nbsp; Additional date display options
+
+➕&nbsp; Tapping the center of the display (the time and date area) toggles the visibility of the time and date
+
+➕&nbsp; Tapping the glucose reading attempts a refresh, and what's that—a basic animation!?
+
+➕&nbsp; Low battery icon only appears when device is at or below 15%
+
+➕&nbsp; Improved UX of settings interface
 
 ## Features
 
@@ -26,26 +32,48 @@ Tired of medical software looking so... medical? Peak is a fork of [Glance](http
 
 ### ✅ &nbsp; Tested & Working 
 
-- 💯&nbsp; Current BG (Mmol/L & Mg/dL)
-- ↗️ &nbsp;Trend direction
-- 🔺&nbsp; Delta
-- ⏳&nbsp; Time since last pull
-- 📈&nbsp; Graph of BG's over time
-- 👣&nbsp; Step count
-- 💗&nbsp; Heart rate
-- ⌚&nbsp; Time
-- 📅&nbsp; Date (and formatting options)
-- 🪫&nbsp; Battery levels
-- 📳&nbsp; Vibration Alerts
-- 🎨&nbsp; Changing background color
+💯&nbsp; Current BG (Mmol/L & Mg/dL)
 
+↗️ &nbsp; Trend direction
+
+🔺&nbsp; Change in BG from previous reading
+
+⏳&nbsp; Time since last pull
+
+📈&nbsp; Graph of BG's over time
+
+👣&nbsp; Step count
+
+💗&nbsp; Heart rate
+
+💉&nbsp; Insulin on Board (IOB)
+
+🍔&nbsp; Carbs on Board (COB)
+
+⌚&nbsp; Time
+
+📅&nbsp; Date (and formatting options)
+
+🪫&nbsp; Battery levels
+
+📳&nbsp; Vibration Alerts
+
+🎨&nbsp; Changing background color (but I'd really recommend sticking with black!)
 
 ### 🤷 &nbsp; Untested
 
-- Insulin on Board (IOB)
-- Carbs on Board (COB)
 - Error reporting
+
 - Temperature
+
+## To Do
+
+- [ ] Add installation instructions (currently pointing to original Glance instructions)
+- [ ] Update CoB & IoB icons
+- [ ] Add support for additional devices
+- [ ] Update Fitbit SDK version
+- [ ] Add weather
+
 
 ## [User Agreement](https://github.com/mykol64/Peak/wiki/User-Agreement)
 
