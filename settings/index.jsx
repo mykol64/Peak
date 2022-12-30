@@ -99,11 +99,6 @@ function mySettings(props) {
         <Toggle settingsKey="showGlucoseUnits" label="Display Glucose Units" />
         <TextInput label="High Threshold" settingsKey="highThreshold" />
         <TextInput label="Low Threshold" settingsKey="lowThreshold" />
-        <Toggle settingsKey="disableAlert" label="Disable Alerts" />
-        <Toggle
-          settingsKey="extraGlucoseSettings"
-          label="Extra Glucose Settings"
-        />
         
       </Section>
 
@@ -114,13 +109,12 @@ function mySettings(props) {
             </Text>
           }
         >
-          <Toggle
-            settingsKey="enableAlerts"
-            label="Enable Alerts"
+          <Toggle settingsKey="disableAlert" label="Disable Alerts" />
+          <Toggle settingsKey="moreAlertSettings" label="More Alert Settings"
           />
 
-          {props.settings.enableAlerts ? (
-            JSON.parse(props.settings.enableAlerts) == true ? (
+          {props.settings.moreAlertSettings ? (
+            JSON.parse(props.settings.moreAlertSettings) == true ? (
               <Section>
                 <Text bold>
                   Alerts
