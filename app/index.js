@@ -357,7 +357,7 @@ function update() {
     // largeGraphLoopStatus.text = ""; // currentBgFromBloodSugars.loopstatus;
 
     // hide glucose units if set in settings
-    if (data.settings.hideGlucoseUnits == true) {
+    if (data.settings.showGlucoseUnits == false) {
       deltaUpdated.text = deltaText + ", " + dateTime.getTimeSenseLastSGV(
         currentBgFromBloodSugars.datetime
       )[0];  

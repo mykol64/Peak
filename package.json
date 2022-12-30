@@ -2,7 +2,7 @@
   "fitbit": {
     "appUUID": "5ec9d14c-92df-4d27-ad5d-43e4126fc840",
     "appType": "clockface",
-    "appDisplayName": "Dumb Glance 0.1",
+    "appDisplayName": "Peak",
     "iconFile": "resources/icon.png",
     "wipeColor": "#673ab7",
     "requestedPermissions": [
@@ -19,7 +19,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "Dumb Glance 0.1"
+        "name": "Peak"
       }
     }
   },

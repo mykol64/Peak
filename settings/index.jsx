@@ -4,33 +4,10 @@ import { XMLHttpRequest } from "xmlhttprequest";
 function mySettings(props) {
   return (
     <Page>
-      <Text>
-        <TextImageRow
-          label="Glance"
-          sublabel="https://github.com/Rytiggy/Glance"
-          // icon="https://image.ibb.co/gbWF2H/twerp_bowtie_64.png"
-        />
-        <Text>&nbsp;</Text>
-        <Text>&nbsp;</Text>
-        <Text>
-          Glance is a solution for use with Fitbit devices to view your blood
-          glucose levels along with a variety of other health stats on the watch
-          face. You can see your stats at a glance!
-        </Text>
-        <Text>&nbsp;</Text>
-        <Text>
-          <Link source="https://github.com/Rytiggy/Glance/wiki/How-to-set-up-Glance#2-settings">
-            Click here to learn how to set up Glance!
-          </Link>
-        </Text>
-      </Text>
 
       <Section
-        title={
-          <Text bold align="center">
-            Data Source Settings
-          </Text>
-        }
+        title={<Text bold>Data Source Settings</Text>}
+        description={<Text><Text bold>Tip: </Text>Leave "https://" and "www." out of the site address. For example, "google.com" not "https://www.google.com"</Text>}
       >
         <Select
           label={`Data Source`}
@@ -54,41 +31,23 @@ function mySettings(props) {
         {props.settings.dataSource ? (
           JSON.parse(props.settings.dataSource).values[0].value ==
           "nightscout" ? (
-            <Text text="center">
-              https://<Text bold>SiteName</Text>.NightscoutHostSite.com
-            </Text>
+            <TextInput
+              title="Nightscout Site Address"
+              label="Site Address"
+              settingsKey="nightscoutAddress"
+              placeholder="google.com"
+              type="url"
+            />
           ) : null
         ) : null}
-
         {props.settings.dataSource ? (
           JSON.parse(props.settings.dataSource).values[0].value ==
           "nightscout" ? (
             <TextInput
-              title="Nightscout"
-              label="Site Name"
-              settingsKey="nightscoutSiteName"
-            />
-          ) : null
-        ) : null}
-
-        {props.settings.dataSource ? (
-          JSON.parse(props.settings.dataSource).values[0].value ==
-          "nightscout" ? (
-            <Text text="center">
-              https://SiteName.<Text bold>NightscoutHostSite</Text>.com
-            </Text>
-          ) : null
-        ) : null}
-        {props.settings.dataSource ? (
-          JSON.parse(props.settings.dataSource).values[0].value ==
-          "nightscout" ? (
-            <Select
-              label="Nightscout Host Site"
-              settingsKey="nightscoutSiteHost"
-              options={[
-                { name: "Heroku", value: "herokuapp.com" },
-                { name: "Azure", value: "azurewebsites.net" },
-              ]}
+              title="Security Token"
+              label="Security Token (Optional)"
+              settingsKey="nightscoutToken"
+              type="password"
             />
           ) : null
         ) : null}
@@ -97,23 +56,21 @@ function mySettings(props) {
           JSON.parse(props.settings.dataSource).values[0].value == "dexcom" ? (
             <Section
               title={
-                <Text bold align="center">
+                <Text bold>
                   Dexcom
                 </Text>
               }
             >
-              <Text bold align="center">
-                Dexcom
-              </Text>
               <TextInput
                 title="Username"
-                label="Username"
+                label="Dexcom Username"
                 settingsKey="dexcomUsername"
               />
               <TextInput
                 title="Password"
-                label="Password"
+                label="Dexcom Password"
                 settingsKey="dexcomPassword"
+                type="password"
               />
               <Toggle
                 settingsKey="USAVSInternational"
@@ -126,7 +83,7 @@ function mySettings(props) {
 
       <Section
         title={
-          <Text bold align="center">
+          <Text bold>
             Glucose Settings
           </Text>
         }
@@ -139,62 +96,66 @@ function mySettings(props) {
             { name: "mmol", value: "mmol" },
           ]}
         />
-        <Toggle settingsKey="hideGlucoseUnits" label="Hide Glucose Units" />
+        <Toggle settingsKey="showGlucoseUnits" label="Display Glucose Units" />
         <TextInput label="High Threshold" settingsKey="highThreshold" />
         <TextInput label="Low Threshold" settingsKey="lowThreshold" />
-        <Toggle settingsKey="disableAlert" label="Disable Alerts" />
-        <Toggle
-          settingsKey="extraGlucoseSettings"
-          label="Extra Glucose Settings"
-        />
+        
+      </Section>
 
-        {props.settings.extraGlucoseSettings ? (
-          JSON.parse(props.settings.extraGlucoseSettings) == true ? (
-            <Section
-              title={
-                <Text bold align="center">
-                  Extra Glucose Settings
+      <Section 
+          title={
+            <Text bold> 
+              Alert Settings
+            </Text>
+          }
+        >
+          <Toggle settingsKey="disableAlert" label="Disable Alerts" />
+          <Toggle settingsKey="moreAlertSettings" label="More Alert Settings"
+          />
+
+          {props.settings.moreAlertSettings ? (
+            JSON.parse(props.settings.moreAlertSettings) == true ? (
+              <Section>
+                <Text bold>
+                  Alerts
                 </Text>
-              }
-            >
-              <Text bold align="center">
-                Alerts
-              </Text>
-              <Toggle settingsKey="highAlerts" label="High Alerts" />
-              <TextInput
-                label="Dismiss high alerts for n minutes"
-                settingsKey="dismissHighFor"
-              />
-              <Toggle settingsKey="lowAlerts" label="Low Alerts" />
-              <TextInput
-                label="Dismiss low alerts for n minutes"
-                settingsKey="dismissLowFor"
-              />
-              <Toggle settingsKey="rapidRise" label="Rapid Rise Alerts" />
-              <Toggle settingsKey="rapidFall" label="Rapid Fall Alerts" />
-              {props.settings.dataSource ? (
-                JSON.parse(props.settings.dataSource).values[0].value ==
-                "nightscout" ? (
-                  <Toggle settingsKey="loopstatus" label="Loop Status Alerts" />
-                ) : null
-              ) : null}
-              <Toggle settingsKey="staleData" label="Stale Data Alerts" />
-              <TextInput
-                label="Stale data alerts after n minutes"
-                settingsKey="staleDataAlertAfter"
-              />
-              <Toggle
-                settingsKey="resetAlertDismissal"
-                label="Dismiss alarm when back in range"
-              />
-            </Section>
-          ) : null
-        ) : null}
+                <Toggle settingsKey="highAlerts" label="High Alerts" />
+                <TextInput
+                  label="Minutes between high alerts"
+                  settingsKey="dismissHighFor"
+                />
+                <Toggle settingsKey="lowAlerts" label="Low Alerts" />
+                <TextInput
+                  label="Minutes between low alerts"
+                  settingsKey="dismissLowFor"
+                />
+                <Toggle settingsKey="rapidRise" label="Rapid Rise Alerts" />
+                <Toggle settingsKey="rapidFall" label="Rapid Fall Alerts" />
+                {props.settings.dataSource ? (
+                  JSON.parse(props.settings.dataSource).values[0].value ==
+                  "nightscout" ? (
+                    <Toggle settingsKey="loopstatus" label="Loop Status Alerts" />
+                  ) : null
+                ) : null}
+                <Toggle settingsKey="staleData" label="Stale Data Alerts" />
+                <TextInput
+                  label="Stale data alerts after n minutes"
+                  settingsKey="staleDataAlertAfter"
+                />
+                <Toggle
+                  settingsKey="resetAlertDismissal"
+                  label="Dismiss alarm when back in range"
+                />
+              </Section>
+            ) : null
+          ) : null}
+
+
       </Section>
 
       <Section
         title={
-          <Text bold align="center">
+          <Text bold>
             Date/Time Settings
           </Text>
         }
@@ -219,18 +180,18 @@ function mySettings(props) {
             { name: "Month Day", value: "Month Day" },
           ]}
         />
-        <Toggle settingsKey="enableDOW" label="Day of week at end of date" />
+        <Toggle settingsKey="enableDOW" label="Display day of the week" />
       </Section>
 
       <Section
         title={
-          <Text bold align="center">
+          <Text bold>
             Layout
           </Text>
         }
       >
 
-        <Text bold align="center">
+        <Text bold>
           Background Color
         </Text>
 
@@ -250,7 +211,7 @@ function mySettings(props) {
         {props.settings.bgColor ? (
           JSON.parse(props.settings.bgColor) == "#FFFFFF" ? (
             <Section title={}>
-              <Text bold align="center">
+              <Text bold>
                 Random Color Generator
               </Text>
               <Text>
@@ -274,20 +235,18 @@ function mySettings(props) {
             "nightscout" ||
           JSON.parse(props.settings.dataSource).values[0].value == "spike" ? (
             <Section>
-              <Text bold align="center">
-                Customize
+              <Text bold>
+                Data Display Slots
               </Text>
               <Text>
-                The customize section is used for customizing the user interface
-                of Glance, you can replace the default values of Glance with
-                other values present.
+                Choose what piece of data to display in each available slot.
               </Text>
               <Text>
                 Note: If the value selected is not present on your data source
                 it will show the default option.
               </Text>
               <Select
-                label={`Layout One`}
+                label={`Slot 1`}
                 settingsKey="layoutOne"
                 options={[
                   { name: "Insulin on board (default)", value: "iob" },
@@ -301,7 +260,7 @@ function mySettings(props) {
                 ]}
               />
               <Select
-                label={`Layout Two`}
+                label={`Slot 2`}
                 settingsKey="layoutTwo"
                 options={[
                   { name: "Carbs on board (default)", value: "cob" },
@@ -315,7 +274,7 @@ function mySettings(props) {
                 ]}
               />
               <Select
-                label={`Layout Three`}
+                label={`Slot 3`}
                 settingsKey="layoutThree"
                 options={[
                   { name: "steps (default)", value: "steps" },
@@ -329,7 +288,7 @@ function mySettings(props) {
                 ]}
               />
               <Select
-                label={`Layout Four`}
+                label={`Slot 4`}
                 settingsKey="layoutFour"
                 options={[
                   { name: "heart (default)", value: "heart" },
@@ -348,20 +307,16 @@ function mySettings(props) {
       </Section>
       <Section
         title={
-          <Text bold align="center">
-            Helpful links
+          <Text bold>
+            Help
           </Text>
         }
       >
-        <Text>
-          If you need help getting started with Glance follow the links below!
-        </Text>
         <Link source="https://github.com/Rytiggy/Glance/wiki/How-to-set-up-Glance#2-settings">
           How to set up Glance
         </Link>
         <Text>
-          Note: Tapping on the time should try to force the watch to sync.
-          You'll feel the watch vibrate.
+          Note: Tapping on the reading in the top left will force the watch to sync—the watch will vibrate.
         </Text>
       </Section>
 
@@ -370,7 +325,7 @@ function mySettings(props) {
         JSON.parse(props.settings.toggle) == true ? (
           <Section
             title={
-              <Text bold align="center">
+              <Text bold>
                 Logs
               </Text>
             }
@@ -400,12 +355,12 @@ function mySettings(props) {
 
 registerSettingsPage(mySettings);
 
-// <Text align="center" bold>
+// <Text bold>
 //     Weather
 // </Text>
 // <Select label={`Temperature units`} settingsKey="tempType" options={[ {name:"Fahrenheit", value:"f"}, {name:"Celsius", value:"c"} ]} />
 
-//             <Text bold align="center" align="center">Treatment</Text>
+//             <Text bold>Treatment</Text>
 //             {((props.settings.dataSource) ? ((JSON.parse(props.settings.dataSource).values[0].value == 'xdrip') ?
 //             <Text>xDrip does not support treatments through API calls. maybe in the future it will!</Text> : null) : null)}
 //             {((props.settings.dataSource) ? ((JSON.parse(props.settings.dataSource).values[0].value != 'xdrip') ?
