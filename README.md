@@ -68,13 +68,18 @@ Tired of medical software looking so... medical? Peak is a fork of [Glance](http
 
 ## To Do
 
-- [ ] Add installation instructions (currently pointing to original Glance instructions)
+- [x] Add installation instructions (currently pointing to original Glance instructions)
 - [ ] Update CoB & IoB icons
 - [ ] Add support for additional devices
 - [ ] Update Fitbit SDK version
 - [ ] Add weather
+- [ ] Add ~2h snooze option for sensor changes
+
+## Getting Started
+
+Read the [Installation & Usage](https://github.com/mykol64/Peak/wiki/Installation-&-Usage) instructions to give Peak a try.
 
 
-## [User Agreement](https://github.com/mykol64/Peak/wiki/User-Agreement)
+## User Agreement
 
 Peak must not be used to make medical decisions, by using Peak you agree to the [user agreement](https://github.com/mykol64/Peak/wiki/User-Agreement).
