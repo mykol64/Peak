@@ -476,18 +476,18 @@ sgv.onclick = (e) => {
   }, 3500);
 };
 
-clockDisplayInstance.onclick = (e) => {
-  console.log("Clock tapped!");
-  if (clockDisplayInstance.getElementById("clock-display-group").style.opacity == "0") {
-    clockDisplayInstance.animate("enable");
+// clockDisplayInstance.onclick = (e) => {
+  // console.log("Clock tapped!");
+  // if (clockDisplayInstance.getElementById("clock-display-group").style.opacity == "0") {
+    // clockDisplayInstance.animate("enable");
     // clockDisplayInstance.groupTransform.scale.x = 1;
     // clockDisplayInstance.groupTransform.scale.y = 1;
-  } else {
-    clockDisplayInstance.animate("disable");
+  // } else {
+    // clockDisplayInstance.animate("disable");
     // clockDisplayInstance.groupTransform.scale.x = .5;
     // clockDisplayInstance.groupTransform.scale.y = .5;
-  }
-};
+  // }
+// };
 
 // wait 2 seconds
 setTimeout(function () {
